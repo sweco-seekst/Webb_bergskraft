@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="postProxy.aspx.cs" Inherits="postProxy" %>

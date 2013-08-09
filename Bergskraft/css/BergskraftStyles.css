@@ -1,0 +1,1219 @@
+﻿html, body {margin: 0; padding: 0; height: 100%; } 
+
+body { 
+	margin: 0px; padding: 0px; background-color:#FFFFFF; 
+	font-family:Verdana, Helvetica,arial, sans-serif; color:#111; font-size: .76em; }
+td {font-family:Verdana, Helvetica,arial, sans-serif; background-color:Transparent; color:#111; font-size: 12px; }
+h1 {font-family:Verdana, Helvetica,arial, sans-serif; color:#111; font-size: 14px; font-weight: bold; margin: 0 0 0 0;  }
+h3 {font-family:Verdana, Helvetica,arial, sans-serif; color:#111; font-size: 13px; font-weight: bold; margin: 0 0 0 0;  }
+a img { border: none;}
+.Clear {clear:both;}
+
+#form1 {
+	margin: 0;
+}
+
+input, textarea {
+	font-family:Verdana, Helvetica,arial, sans-serif;
+}
+
+a:link {
+	color: #0066b3;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #003257;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #003257;
+	text-decoration: none;
+}
+
+label {
+	cursor: pointer;
+}
+
+/***************************************
+*            The Master Page           *
+***************************************/
+
+#masterContainer { position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: none; }
+#header { height: 0px; color: #FFF;}
+#header h1 { color: #FFF;}
+
+/* Login Boxes */
+#userInfo { position: absolute; top: 5px; right: 5px; width: 240px; height:100px; background-color:Transparent; border: none;  }
+#userInfo span, #userInfo div { color:#FFF; }
+#userInfo a, #userInfo a:link, #userInfo a:visited { text-decoration: underline; font-size: 12px; color:#FFF;  }
+#userInfo a:active { text-decoration: underline; font-size: 12px; color:#EFEFEF;  }
+#userInfo a:hover { text-decoration: none; font-size: 12px; color:#EFEFEF;  }
+
+#inputValueUserName { width: 240px; height: 23px; border: none; }	
+#inputValueUserName .Label { float: left; width: 100px; text-align: left; font-size: 12px; border: none; }
+#inputValueUserName input { width: 120px; height: 16px;  float: left; margin-right: 3px; border: none;}
+#inputValueUserName span.ErrorMessage { float: left; color: #F00;}
+
+#inputValuePassword { width: 240px; height: 23px; border-width: 0px;}
+#inputValuePassword .Label { float: left; width: 100px; text-align: left; font-size: 12px; border: none; }
+#inputValuePassword input { width: 120px; height: 16px; float: left; margin-right: 3px; border: none; }
+#inputValuePassword span.ErrorMessage { float: left; color: #F00; }
+
+#inputValueRememberMe { width: 120px; height: 23px; float: left; border: none; }
+#inputValueRememberMe input { border: none; }
+
+#inputValueLoginButton { width: 70px; height: 23px; float: right; text-align:right; padding-right: 19px; border: none; }
+#inputValueLoginButton input { width: 70px; height: 22px; }
+
+div#inputValueFailureText { width: 200px; margin-top: 5px; font-size: 12px; color:#F00; clear:both; height: 14px; border: none; }
+ 
+#loginLinks {width: 240px; padding-left: 0px; }
+#loginLinks .NewUser {margin-right: 5px; }
+
+#mainContentPlaceholder { /*background-color: #fff;*/ }
+
+ 
+/* Menu */
+#menu {height: 0px; background-color:Aqua; }
+#menu a, #menu a:link, #menu a:visited { margin: 0 3px 0 3px; line-height: 25px; text-decoration: none; font-size: 13px; color:#3D5874; }
+#menu a:active { text-decoration: none; font-size: 13px; color:#3D5874; }
+#menu a:hover { text-decoration: underline; font-size: 13px; color:#3D5874; }
+
+
+
+/* Content Container */
+#mainContent {}
+   
+/********************* End General and Master Page *********************/
+
+
+/* Page UserSettings.aspx */
+#page_UserSettings_aspx h1 { margin-top: 10px; margin-bottom: 10px; }
+#page_UserSettings_aspx h3 { clear: both; margin-top: 10px; margin-bottom: 3px; }
+
+#page_UserSettings_aspx .InputValue {clear:both; margin-bottom: 3px;}
+#page_UserSettings_aspx .ValidationGroup {clear: both; color: Red;}
+#page_UserSettings_aspx .ButtonContainer { clear: both; }
+
+#page_UserSettings_aspx #userSettingsContainer { width: 355px; float: left; }
+#page_UserSettings_aspx #changePasswordContainer { width: 355px; float: right;}
+
+/* All input values, including user settings and password settings, etc.*/
+#page_UserSettings_aspx .InputValue {clear:both; margin-bottom: 3px; }
+#page_UserSettings_aspx .InputValue span {display: block; float: left; width: 150px; text-align: right;}
+#page_UserSettings_aspx .InputValue input {display: block; float: left; margin-left: 3px;}
+
+/* Input values, some special for passwords. */
+#page_UserSettings_aspx .InputValue label {display: block; float: left; width: 150px; text-align: right;}
+#page_UserSettings_aspx #changePasswordContainer .InputValue span {display: block; float: left; width: 10px; text-align: left;}
+
+/* Page RoleAdministration.aspx */
+#page_RoleAdministration_aspx #usersInRoleContainer { float: left;}
+#page_RoleAdministration_aspx #availableUsersContainer { float: right;}
+
+/* Page UserList.aspx */
+#page_UserList_aspx h1 {margin-bottom: 15px }
+#page_UserList_aspx .InputValues { height: 60px;}
+#page_UserList_aspx .InputValues .InputValue { display:block; height: 26px; float: left; }
+#page_UserList_aspx .InputValues .InputValue span { margin-right: 3px; margin-left: 3px; }
+#page_UserList_aspx .InputValues .ButtonContainer { float: right; text-align:right; }
+#page_UserList_aspx .QuestionDeleteUserVisible {
+	position:absolute; z-index: 999; top: 150px; left: 200px; width: 400px; height: 160px; 
+	background-color: #D5D5D5; border: solid 1px #f00; padding: 5px 5px 5px; display: block; }
+#page_UserList_aspx .QuestionDeleteUserVisible .Question { }
+#page_UserList_aspx .QuestionDeleteUserVisible .ButtonContainer { text-align: right; }
+#page_UserList_aspx .QuestionDeleteUserVisible .ButtonContainer input { width: 70px; }
+#page_UserList_aspx .QuestionDeleteUserInvisible { display: none; }
+
+
+/* ******* Page MapSearch.aspx ******* */
+#page_MapSearch_aspx {
+	position:absolute; 
+	top: 75px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+#mousePositionBg {
+    position: absolute;
+    right: 0px;
+    bottom: 19px;
+    background-color: gray;
+    height: 33px;
+    width: 215px;
+    z-index: 4;
+    opacity: 0.35;
+    filter:alpha(opacity=35); /* For IE8 and earlier */
+}
+
+/* System Info Container. */
+#systemInfoContainer {
+	position:absolute;  
+	bottom: 31px; 
+	left: 4px; 
+	font-size: .9em;
+	color: #000;
+	text-shadow: 1px 1px 0 #fff;
+	z-index: 130;
+} 
+
+#systemInfoContainer a {
+	color: #000;
+}
+/* Map and Toolbar - positioned inside page-div*/
+#page_MapSearch_aspx #toolBar {
+	background: url(../images/subheader-bg.png) top left repeat;
+	min-height: 47px;
+	position: relative;
+	width: 100%;
+	z-index: 95;
+}
+
+/* ------------------------------------ Panzoombar control */
+
+.BergisPanZoomBar {
+    background: url(../images/zoompan_bg.png) 0px 0px no-repeat;
+	position: absolute; bottom: 23px;
+	z-index: 3;
+	height: 45px;
+}
+.BergisPanZoomBar div, .olControlPanZoom div {cursor: pointer;}
+#slider{ border: none; background: none; color: #000000; }
+#slider a { border: none; background: none; font-weight: normal; color: #0066b3; }
+/* ------------------------------------ Panzoombar control 
+.BergisPanZoomBar
+{
+    background: url(../images/zoompan_bg.png) 163px 47px no-repeat;
+    width: 555px;
+    height: 95px;
+    
+    }
+    
+.BergisPanZoomBar div, 
+.olControlPanZoom div 
+{
+    cursor: pointer;
+    }
+*/
+
+#page_MapSearch_aspx #toolBar-inner {
+	float: none;
+	margin: auto;
+	width: 184px;
+}
+
+#page_MapSearch_aspx #toolBar-inner div {
+	margin-top: 6px;
+}
+/*
+#page_MapSearch_aspx #mapContainer {
+	position:absolute; 
+	top:0; 
+	bottom:0; 
+	left:0; 
+	right:0; 
+	z-index: 2;
+}  mapContainer requierd for IE :( */
+
+#page_MapSearch_aspx #map 
+{
+    background-color: #A8C8D0;
+	position:absolute;
+	top: 0px; right: 0px; bottom: 0px; left: 0px;
+	width:100%;
+	height: 100%;
+	z-index: 3;
+}
+#page_MapSearch_aspx #zoomPanBg 
+{
+    position:absolute;   
+    width: 385px;
+    height:45px;
+    z-index: 4;
+    background: url(../images/zoompan_bg.png) no-repeat;
+}
+#page_MapSearch_aspx #map .olMapViewport {
+	z-index: 4;
+}
+
+#page_MapSearch_aspx #scaleBar {
+
+	display: none;
+
+	position: absolute;
+	top: 20px; right: 16px;
+	z-index: 120;
+}
+
+
+/* Tab Container*/
+#page_MapSearch_aspx #container-1 {
+	background: none;
+	border: none;
+	position:absolute;
+	left: 16px;
+	top: 20px; 
+	padding: 0;
+	width:360px; 
+	z-index: 140;
+}
+
+#container-1 .tabs-container {
+	background: #dcdcdc url(../images/box-bg.gif) top left repeat-x;
+	border: solid #a3a3a3; border-width: 0 1px 1px 1px;
+	float: left;
+}
+
+#container-1 .tabs-nav {
+	background: transparent;
+	border: none;
+	padding: 0;
+}
+
+#container-1 .tabs-nav li {
+	border: none;
+	margin: 0;
+}
+
+#container-1 .tabs-nav li#tab2 a {
+	border-left: none;
+}
+
+#container-1 .tabs-nav li a {
+	min-width: 44px;
+	text-align: center;
+}
+
+
+#container-1 .tabs-nav a {
+	border-top: 4px solid #949494;
+	border-bottom: 1px solid #a3a3a3;
+	border-left: 1px solid #a3a3a3;
+	border-right: 1px solid #a3a3a3;
+	color: #0066B3;
+	font-weight: normal;
+	padding: 3px 12px 3px 12px;
+	text-decoration: none;
+}
+
+#container-1 .tabs-nav a:hover {
+	color: #003257;
+}
+
+#container-1 .tabs-nav a span {
+	background: none;
+	display: inline;
+	padding: 0;
+}
+
+#container-1 .tabs-container {
+	height: auto;
+	padding: 16px 16px 0 16px;
+	width: auto;
+}
+
+#page_MapSearch_aspx #container-2 {
+	position:absolute;
+	right: 16px;
+	top: 18px; 
+	width:332px; 
+	background-color: none;
+	z-index: 130;
+}
+
+#layers-trigger, 
+#layers-trigger:visited 
+{
+    background: #fdfdfd;
+	border-top: 4px solid #dfa51b;
+	border-bottom: 1px solid #f9f9f9;
+	border-left: 1px solid #a3a3a3; border-right: 1px solid #a3a3a3;
+	color: #000;
+	font-weight: bold;
+	padding: 5px 12px;
+	position: absolute; top: 0; right: 0;
+	text-align: center;
+	text-decoration: none;
+	z-index: 1;
+	min-width: 96px;
+}
+
+#container-1 .tabs-nav li.tabs-selected a {
+	background-position: right -40px;
+	border-top-color: #dfa51b;
+	border-bottom-color: #f9f9f9;
+	border-left: 1px solid #a3a3a3; border-right: 1px solid #a3a3a3;
+	color: #000;
+	font-weight: bold;
+}
+
+#layers {
+	background: #dcdcdc url(../images/box-bg.gif) top left repeat-x;
+	border: solid #a3a3a3; border-width: 0 1px 1px 1px;
+	margin-top: -1px;
+	padding: 16px 16px 0;
+	position: absolute; right: -1px; top: 30px;
+	z-index: 0;
+	
+	-moz-border-radius-bottomleft: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+}
+
+.content 
+{
+    margin-bottom: 16px;
+    }
+
+#layers-trigger-bottom, 
+#searchtriggerbottom {
+	background: url(../images/trigger-bottom.png) center top no-repeat;
+	cursor: pointer;
+	display: block;
+	padding: 6px 0 5px;
+	text-indent: -9999px;
+	width: 320px;
+}
+
+#layers-trigger-bottom 
+{
+    width: 280px;
+    }
+
+#layers-trigger-bottom:hover, 
+#layers-trigger-bottom:focus, 
+#searchtriggerbottom:hover, 
+#searchtriggerbottom:focus {
+	background-position: center -50px;
+	outline-width: 0;
+}
+
+#layers-trigger-bottom.closed, 
+#searchtriggerbottom.closed {
+	background-position: center -100px;
+}
+
+#layers-trigger-bottom.closed:hover, 
+#layers-trigger-bottom.closed:focus, 
+#searchtriggerbottom.closed:hover, 
+#searchtriggerbottom.closed:focus {
+	background-position: center -150px;
+	outline-width: 0;
+}
+
+/* Toc:en */
+#page_MapSearch_aspx #toc2 
+{
+    max-height: 320px;
+	position:relative;
+	overflow-y: scroll;
+	width:280px;
+}
+
+#page_MapSearch_aspx #toc2 ul {
+	margin: 0;
+	padding-left: 21px;
+	list-style-type:none;
+}
+
+#page_MapSearch_aspx #toc2 li {
+	clear: both; 
+	line-height: 1.4;
+}
+    
+#page_MapSearch_aspx #toc2 li ul {
+	margin: 5px 0 10px 0;
+	padding-left: 12px;
+	display:none;
+}
+
+#page_MapSearch_aspx #toc2 li li {
+	float: left;
+	margin: 1px 0;
+	width: 100%;
+}
+
+#page_MapSearch_aspx #toc2 li input {
+	clear: left;
+	float: left;
+	margin: 0 7px 0 0;
+}
+
+#page_MapSearch_aspx #toc2 li label {
+	position: relative; bottom: 1px;
+	width: 90%;
+}
+
+#page_MapSearch_aspx #fragment-1 #toc2 ul li img {cursor:pointer;}
+#page_MapSearch_aspx #fragment-1 #toc2 ul li label {cursor:hand;}
+
+
+/* Search-box */
+#page_MapSearch_aspx #fragment-2 #searchBox {
+	position:relative;
+}
+
+#page_MapSearch_aspx #searchBox span {
+	display:block;
+	margin-bottom: 3px;
+} 
+.layerNode {
+left: -10px;
+list-style-image:none;
+list-style-type:none;
+margin:2px;
+position:relative;
+}
+#page_MapSearch_aspx #searchBox #textSearchInputValue input {
+	clear:both;
+	width: 310px;
+}
+
+#page_MapSearch_aspx #searchBox #textSearchInputValue {
+	margin-bottom: 8px;
+}
+
+#showNotDefined {
+	float: left;
+	margin: 0 7px 0 0;
+}
+
+#showNotDefinedLabel, 
+#showNotDefinedLabel:visited 
+{
+    color: #0066b3;
+    background: url(../images/mini-arrows.gif) right 6px no-repeat;
+	float: left;
+	margin-top: -1px;
+	margin-bottom: 6px;
+	padding-right: 13px;
+}
+
+#showNotDefinedLabel.open 
+{
+        background-position: right -44px;
+        color: #000;
+        text-decoration: none;
+    }
+
+#page_MapSearch_aspx #searchBox #countyInputValue {float: left; margin: margin: 0 0 0 10px;}
+#page_MapSearch_aspx #searchBox #countyInputValue #county {width: 150px; height: 150px; overflow: auto; border:2px solid #DDA625; }
+#page_MapSearch_aspx #searchBox #municipalityInputValue {float: left; margin: 0 0 0 10px; width: 154px;}
+#page_MapSearch_aspx #searchBox #municipalityInputValue #municipality {width: 150px; height: 150px; overflow: auto; border:2px solid #DDA625; }
+#page_MapSearch_aspx #searchBox #shireInputValue {float: left; margin: 15px 0 0 0; width: 154px;}
+#page_MapSearch_aspx #searchBox #shireInputValue #shire {width: 312px; height: 150px; overflow: auto; border:2px solid #DDA625; }
+#page_MapSearch_aspx #searchBox #depositInputValue {float: left; margin: 15px 0 0 10px; width: 154px;}
+#page_MapSearch_aspx #searchBox #depositInputValue #deposit {width: 150px; height: 150px; overflow: auto; border:2px solid #DDA625; }
+
+.value-wrap {
+	clear: left;
+	padding-top: 10px;
+	position: relative;
+	width: 100%;
+	display: none;
+}
+
+#page_MapSearch_aspx .value-trigger {
+	background: url(../images/value-trigger-bg.gif) left 0 no-repeat;
+	color: #000;
+	float: left;
+	padding: 5px 2.5%;
+	text-decoration: none;
+	width: 94.9%;
+}
+
+#page_MapSearch_aspx .value-trigger:hover {
+	background-position: left -50px;
+}
+
+#page_MapSearch_aspx .value-trigger.open, 
+#page_MapSearch_aspx .value-trigger.open:hover {
+	background-position: left -100px;
+}
+
+#page_MapSearch_aspx div.value-trigger, 
+#page_MapSearch_aspx div.value-trigger:hover {
+	background-position: left -150px;
+	color: #555;
+	font-style: italic;
+}
+
+.value-dropdown {
+	background: #fff;
+	border: solid #a3a3a3; border-width: 0 1px 1px 1px;
+	clear: both;
+	display: none;
+	height: 130px;
+	overflow-y: scroll;
+	position: absolute; top: 34px;
+	padding: 5px 8px;
+	width: 298px;
+	z-index: 1;
+}
+
+.value-dropdown ul {
+	float: left;
+	list-style: none; 
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.value-dropdown li {
+	float: left;
+	padding: 3px 0;
+	width: 50%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.value-dropdown ul input {
+	margin: 0 3px 0 0;
+}
+
+.value-dropdown label {
+	position: relative; bottom: 2px;
+}
+
+.value-dropdown label:hover {
+	color: #666;
+}
+
+#page_MapSearch_aspx #searchBox #btnSearch {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	cursor: pointer;
+	background: #dfa61e url(../images/search-btn-bg.gif) left 0 repeat-x;
+	border: 1px solid #a98329;
+	color: #625035;
+	float:right;
+	font-weight: bold;
+	margin: 20px 0 0 0;
+	padding: 4px 0;
+	width: 70px;
+	text-shadow: 1px 1px 0 #fff;
+}
+
+#page_MapSearch_aspx #searchBox #btnSearch:hover {
+	background-position: left -50px;
+}
+
+#page_MapSearch_aspx #searchBox #btnSearch:focus {
+	background-position: left -100px;
+	background-color: #f2dba4;
+	text-shadow: 1px 1px 0 #f4e1b2;
+}
+
+#page_MapSearch_aspx #searchBox #btnClear {
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	cursor: pointer;
+	background: #dadada url(../images/clear-btn-bg.gif) left 0 repeat-x;
+	border: 1px solid #a3a3a3;
+	color: #444;
+	float:right;
+	margin: 20px 10px 0 0;
+	padding: 4px 0;
+	width: 70px;
+}
+
+#page_MapSearch_aspx #searchBox #btnClear:hover {
+	border-color: #888;
+	color: #000;
+}
+
+#page_MapSearch_aspx #searchBox #btnClear:focus {
+	background-position: left -50px;
+	background-color: #fff;
+}
+
+
+/* Result-list */
+
+#page_MapSearch_aspx #resultList {
+	border: 1px solid #a3a3a3;
+	max-height: 435px;
+	overflow-y: scroll;
+    width: 99.4%;
+}
+
+#page_MapSearch_aspx .ui-accordion-header {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	
+	background: #fff;
+	border-width: 0 0 1px 0;
+	margin-top: 0;
+}
+
+#page_MapSearch_aspx .ui-accordion-header.ui-state-active {
+	background: #f9f9f9 url(../images/loading-bg.gif) top left repeat-x;
+	border-bottom: 4px solid #DFA51B;
+}
+
+body .ui-accordion .ui-accordion-content {
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	
+	border-width: 0 0 2px 0;
+	padding: 0 1em;
+	top: 2px;
+}
+
+body .ui-accordion .ui-accordion-content ul 
+{
+    padding-left: 15px;
+    }
+    
+.ui-accordion .ui-accordion-content .doc-viewer-link
+{
+    background: #d9d9d9 url("../images/doc-viewer-link.gif") right -1px no-repeat;
+    border: 1px solid #a3a3a3;
+    clear: left;
+    float: left;
+    font-size: .9em;
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding: 4px 26px 5px 10px;
+    text-decoration: none;
+    
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    }
+
+.pageNoAccordion {
+	display: none; /* !!!! */
+}
+
+#page_MapSearch_aspx #noOfHitsDiv {
+	font-weight: bold;
+	margin-bottom: .8em;
+}
+
+
+/* Result-list - pageing*/
+
+#page_MapSearch_aspx #pageingContainer {
+	-moz-border-radius: 14px;
+
+	background: #f9f9f9;
+	border: 1px solid #a3a3a3;
+	float: left;
+	margin: 1.4em auto 1.2em 0;
+	padding: 0 10px;
+	text-align: center;
+}
+
+#page_MapSearch_aspx #pageingContainer span {
+	float: left;
+}
+
+#page_MapSearch_aspx #pageingContainer span a {
+	float: left;
+	font-weight: bold;
+	padding: 4px 6px;
+	text-decoration: none;
+}
+
+#page_MapSearch_aspx #pageingContainer span a:hover, 
+#page_MapSearch_aspx #pageingContainer span a:active {
+	background-color: #d6eeff;
+}
+
+#page_MapSearch_aspx #pageingContainer .selected a {
+	background-color: #e0e0e0;
+	color: #000;
+}
+
+
+/* object List */
+#page_MapSearch_aspx #objectList{width:100%; height:80%; border:1px solid #999999; overflow:auto; }
+
+/* loading bar */
+#page_MapSearch_aspx #loadingBar, 
+#docloadingBar {
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	
+	background: #dcdcdc url(../images/loading-bg.gif) top left repeat-x;
+	border: 1px solid #a3a3a3;
+	font-weight: bold;
+	margin: -60px 0 0 -95px;
+	text-align: center;
+	padding: 30px 20px;
+	position: absolute; top: 50%; left: 50%;
+	width: 150px;
+	z-index: 99999;
+}
+
+#page_MapSearch_aspx #loadingBar div, 
+#docloadingBar div {
+	background: transparent url(../images/ajax-loader.gif) left top no-repeat; 
+	height: 11px;
+	margin: 0 auto 12px;
+	width: 43px; 
+}
+
+#page_MapSearch_aspx #loadingBar p, 
+#docloadingBar p {
+	color: #333;
+	margin: 0;
+}
+
+.hide {display: none;}
+/* Accordion */
+.accordionContent{height: auto; display: block; border: 2px solid #DDA625; background-color:White; padding-left:5px;}
+
+/* ******* Page documentView.aspx ******* */
+
+#page_documentView_aspx {
+	background-color: #fff;
+	height: 100%;
+	/*position: relative;*/
+	width: 100%;
+}
+
+#page_documentView_aspx #map {
+	position: absolute; top: 0; right: 0; bottom: 75px; left: 0;
+}
+
+#page_documentView_aspx #docu-footer {
+	background: #dadada url(../images/footer-bg.gif) top left repeat-x;
+	height: 45px;
+	position: absolute; right: 0; bottom: 0; left: 0;
+	width: 100%;
+}
+
+#page_documentView_aspx #pager {
+	margin: 0px 10px 0 10px;
+	line-height: 2;
+	text-align: center;
+}
+
+#page_documentView_aspx #orgPageNo {
+	font-size: .7em;
+	margin: 0 0 0 0;
+	text-align:center;
+	text-shadow: 1px 1px 0 #fff;
+}
+
+/* Pageing */
+#page_documentView_aspx #pager span {
+	margin: 0 2px;
+}
+
+#page_documentView_aspx #pager span a {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#page_documentView_aspx #pager .selected {
+	background-color: #fff;
+	border: 1px solid #a3a3a3;
+	color: #000;
+	font-size: 1.4em;
+	margin-right: 3px;
+	padding: 2px 0 3px 5px;
+	position: relative; top: 2px; left: 1px;
+}
+#showTopHandleContainer {
+    cursor: pointer;
+    top: 51px;
+    position: relative;
+    margin-left: -30px;
+    left: 50%;
+    height: 20px;
+    width: 60px;
+    background: url(../images/collapseHeader.png) top left no-repeat;
+}
+#hideTopHandleContainer {
+    cursor: pointer;
+    top: 51px;
+    position: relative;
+    margin-left: -30px;
+    left: 50%;
+    height: 20px;
+    width: 60px;
+    background: url(../images/collapseHeader.png) top left no-repeat;
+}
+
+.topContainer {
+	background: url(../images/header-bg.gif) top left repeat-x;
+	line-height: 1.4;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100; 
+}
+
+.topContainer h1 a {
+	background: url(../images/logo.png) top left no-repeat;
+	float: left;
+	height: 87px;
+	margin-left: 16px;
+	text-indent: -9999px;
+	width: 60px;
+}
+
+.loginContainer {
+	background: url(../images/user.png) left 2px no-repeat;
+	float: left;
+	margin: 18px 0 0 40px;
+	padding-left: 46px
+}
+
+.euContainer {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.infoContainer {
+	position: absolute;
+	top: 16px;
+	right: 120px;
+}
+
+#LoggedInTxt{position:absolute; top:5px; left: 5px; width:250px;}
+.searchBox{background-color:white}
+#noResults{padding:10px; color:red;}
+
+	/* Remove the min max on the dialogs. */
+    .ui-dialog-titlebar-min {
+		display: none;
+	}
+	.ui-dialog-titlebar-max {
+		display: none;
+	}
+	
+	/* And show it on the special ones. */
+    .showMinMax .ui-dialog-titlebar-min {
+		display: block;
+	}
+	/* And show it on the special ones. */
+    .showMinMax .ui-dialog-titlebar-max {
+		display: block;
+	}
+#fotnot, #currentCount {
+	clear: both;
+	color: #333;
+	font-size: .9em;
+	padding-top: 22px;
+	text-shadow: 1px 1px 0 #fff;
+	text-align: center;
+	width: 100%;
+}
+
+#fotnot {
+	padding-top: 16px;
+	text-align: left;
+}
+
+#engHeaderFlag {
+	background: url('../images/ico_english.gif') left center no-repeat;
+	float: left;
+	margin-bottom: 2px;
+	cursor:pointer;
+	padding-left: 22px;
+}
+
+#reportHeaderFlag {
+	background: url('../images/ico_english.gif') left center no-repeat;
+	float: left;
+	margin-bottom: 2px;
+	cursor:pointer;
+	padding-left: 22px;
+}
+
+
+#aboutWeBerGIS {
+	background: url('../images/ico_pdf.gif') left 2px no-repeat;
+	clear: left;
+	float: left;
+	padding-left: 22px;
+	display: none;
+}
+
+#engPaymentFlag{float:right; background-image:url('../images/engFlag.jpg'); border:1px solid blue; height:25px;position:absolute;right:5px;top:7px;width:40px; cursor:pointer;}
+
+
+#reportPaymentFlag{float:right; background-image:url('../images/engFlag.jpg'); border:1px solid blue; height:25px;position:absolute;right:5px;top:7px;width:40px; cursor:pointer;}
+
+#userPaidToDateTxt{width:300px;}
+
+/* Dialogs */
+
+#newUserValidateTips, #newUser, #newUserError {
+	margin-top: 0;
+}
+
+#engDialog p
+{
+    line-height: 1.5;
+    margin: 0;
+    }
+
+#reportDialog p
+{
+    line-height: 1.5;
+    margin: 0;
+    }
+
+#newUserValidateTips {
+	background: #f9f9f9 url(../images/ico-info.gif) 8px center no-repeat;
+	border: 1px solid #2C82FC;
+	padding: .5em 0 .5em 30px;
+}
+
+#loginError, #newUserError {
+	background: #FEF8F6 url(../images/ico-error.gif) 8px center no-repeat;
+	border: 1px solid #CD0A0A;
+	padding: .5em 0 .5em 30px;
+}
+
+.login-sign-up fieldset {
+	background: #f9f9f9;
+	border: 1px solid #a3a3a3;
+	padding: .8em .8em .2em;
+}
+
+.login-sign-up label {
+	clear: left;
+	float: left;
+	margin-bottom: 3px;
+}
+
+.login-sign-up input {
+	clear: left;
+	float: left;
+	margin-bottom: .8em;
+	width: 97%;
+}
+
+.login-sign-up p {
+	clear: both;
+}
+
+.login-sign-up fieldset p {
+	padding-top: 1em;
+}
+
+/* jQuery and OpenLayers adjustments */
+
+#map div.olControlMousePosition {
+	color: #000;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: .9em;
+	bottom: 20px;
+	right: 8px;
+	z-index: 150;
+	text-shadow: 1px 1px 0 #fff;
+}
+#map div.olControlMousePosition2 {
+    bottom: 35px;
+    right: 8px;
+    display: block;
+    position: absolute;
+    color: #000;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: .9em;
+	z-index: 150;
+	text-shadow: 1px 1px 0 #fff;
+}
+#page_MapSearch_aspx .ui-widget {
+        font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+    
+#container-1.ui-tabs .ui-tabs-nav a {
+    cursor: pointer;
+}
+
+body .ui-tabs .ui-tabs-nav li {
+	top: 0;
+}
+
+body .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+	padding-bottom: 0;
+}
+
+body .ui-widget-overlay {
+    background: #002431; opacity: .5;
+} 
+
+body .ui-dialog {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    
+    border:none;
+    padding: 0;
+}
+
+body .ui-widget-header {
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    -moz-border-radius-bottomleft: 0;
+    -moz-border-radius-bottomright: 0;
+    
+    border: solid #DFA51B; border-width: 0 0 4px 0;
+}
+    
+body .ui-dialog .ui-dialog-titlebar {
+    padding: .6em 1em;
+}
+    
+body .ui-dialog .ui-dialog-buttonpane {
+    -moz-border-radius-bottomleft: 4px;
+    -moz-border-radius-bottomright: 4px;
+    
+    background-color: #e6e6e6;
+}
+
+body .ui-dialog .ui-dialog-content {
+	padding: 1.5em 1em;
+}
+    
+body .ui-widget-content a {
+	color: #0066b3;
+}
+
+body .ui-widget-content a:visited {
+	color: #003257;
+	text-decoration: underline;
+}
+
+body .ui-widget-content a:hover {
+	color: #003257;
+	text-decoration: none;
+}
+
+body .ui-resizable-se {
+	background: url(../img/resize-handle.gif) left top no-repeat;
+	bottom: 6px;
+	right: 6px;
+}
+/* Popup overrides */
+.olPopup
+{
+  height: 90px !important;
+}
+.olPopupContent
+{
+  background: url(../images/infoBox.png) 0 0 no-repeat;
+  height: 81px !important;
+  overflow: hidden !important;
+}
+.olLayerGeoRSSClose
+{
+  display: none;
+}
+.olLayerGeoRSSTitle
+{
+  font-size: 1em !important;
+  font-family: Verdana, Helvetica,arial, sans-serif !important;
+  margin-top: 26px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+.olLayerGeoRSSDescription
+{
+  font-size: 1em !important;
+  margin-left: 10px;
+  width: 97% !important;
+  height: 44px !important;
+}
+
+/* map-switcher margin: 8px 25px 7px 12px;*/
+
+#map-switcher {
+	float: right;
+	
+	display: none;
+	list-style-type: none;	
+}
+#map-switcher li {
+	float: left !important;
+	text-decoration: none;
+}
+#map-switcher a {
+	background: url(../images/map-switcher2.png) left 0 no-repeat;
+	color: #333;
+	float: left;
+	min-width: 50px;
+	padding: 4px 5px;
+	text-align: center;
+	text-decoration: none;
+	border-left: none;
+}
+
+#map-switcher a:hover {
+	color: #005DAB;
+}
+
+#map-switcher .selected a {
+	color: Black;
+	font-weight: bold;
+}
+
+#map-switcher .first a { background-position: left 7px !important; }
+#map-switcher .first a:hover { background-position: left -109px !important; }
+#map-switcher .first.selected a { background-position: left -225px !important; }
+
+#map-switcher .middle a { background-position: -1px -70px !important; padding-right: 21px; }
+#map-switcher .middle a:hover { background-position: -1px -186px !important; padding-right: 21px; }
+#map-switcher .middle.selected a { background-position: -1px -302px !important; padding-right: 21px; }
+
+#map-switcher .last a { background-position: -1px -32px !important; }
+#map-switcher .last a:hover { background-position: -1px -147px !important; }
+#map-switcher .last.selected a { background-position: -1px -263px !important; }
+
+
+#map-switcher-container {width: 352px; position: absolute; top: 28px; left: 50%; margin-left: -232px; z-index: 9999;}
+#map-switcher-container li {float: right;}
+
+#map-switcher-container a {text-indent: -11px; display: block;font-weight: bold;padding: 14px 22px 12px 32px;}
+
+#map-switcher-container a:hover {text-decoration: none; color: Black;}
+
+#selectControlTitleOnHover
+{
+    background: none repeat scroll 0 0 #e4af32;
+    color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+	position: absolute;
+	z-index: 2;	
+	height: 23px;
+	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+#selectControlTitleOnHover span
+{
+    margin: 10px;
+    position: relative;
+    top: 4px;
+}
+.leftColumn{
+    background-color: #DDD;
+    border: 1px solid gray;
+    font-size: 11px;    
+}
+.rightColumn{
+    border: 1px solid gray;
+    font-size: 11px;    
+}
+.additionalTitle {
+    color: Red;
+    font-size: 10px;
+}

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd">
+  <WMT_MS_Capabilities version="1.1.1">
+      <Service>
+        <Name>OGC:WMS</Name>
+        <Title>Web Map Service wms_biogeokemi_cu</Title>
+        <Abstract>ArcIMS 9.1.0wms_biogeokemi_cu Web Map Service</Abstract>
+          <KeywordList>
+            <Keyword>ArcIMS</Keyword>
+        </KeywordList>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_biogeokemi_cu?" xlink:type="simple" />
+          <ContactInformation>
+              <ContactPersonPrimary>
+                <ContactPerson>Kundtjänst</ContactPerson>
+                <ContactOrganization />
+            </ContactPersonPrimary>
+            <ContactPosition />
+              <ContactAddress>
+                <AddressType>postal</AddressType>
+                <Address />
+                <City />
+                <StateOrProvince />
+                <PostCode />
+                <Country />
+            </ContactAddress>
+            <ContactVoiceTelephone />
+            <ContactFacsimileTelephone />
+            <ContactElectronicMailAddress />
+        </ContactInformation>
+        <Fees>none</Fees>
+        <AccessConstraints>none</AccessConstraints>
+    </Service>
+      <Capability>
+          <Request>
+              <GetCapabilities>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                  <DCPType>
+                      <HTTP>
+                          <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_biogeokemi_cu?" xlink:type="simple" />
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetCapabilities>
+              <GetMap>
+                <Format>image/png</Format>
+                <Format>image/jpeg</Format>
+                  <DCPType>
+                      <HTTP>
+                          <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_biogeokemi_cu?" xlink:type="simple" />
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetMap>
+              <GetFeatureInfo>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                <Format>text/xml</Format>
+                <Format>text/html</Format>
+                <Format>text/plain</Format>
+                  <DCPType>
+                      <HTTP>
+                          <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_biogeokemi_cu?" xlink:type="simple" />
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetFeatureInfo>
+        </Request>
+          <Exception>
+            <Format>application/vnd.ogc.se_xml</Format>
+            <Format>application/vnd.ogc.se_inimage</Format>
+            <Format>application/vnd.ogc.se_blank</Format>
+        </Exception>
+          <Layer queryable="0" opaque="0" noSubsets="0">
+            <Title>wms_biogeokemi_cu</Title>
+            <SRS>EPSG:4326</SRS>
+            <SRS>EPSG:2400</SRS>
+            <SRS>EPSG:4267</SRS>
+            <SRS>EPSG:4269</SRS>
+            <LatLonBoundingBox minx="-3.2035576888" miny="53.8035870085" maxx="37.3981100899" maxy="69.44121709" />
+            <BoundingBox SRS="EPSG:2400" minx="1200000.00000031" miny="6099999.99999976" maxx="1900112.48593954" maxy="7699999.99999969" />
+            <Layer queryable="0" opaque="0" noSubsets="0">
+              <Name>grundvatten:SE.GOV.SGU.BRUNNAR.250K</Name>
+              <Title>Brunnar</Title>
+              <SRS>EPSG:4326</SRS>
+              <LatLonBoundingBox minx="8.2161154259" miny="54.8702764365" maxx="25.8912035658" maxy="69.3890346329" />
+            </Layer>
+            <Layer queryable="0" opaque="0" noSubsets="0">
+              <Name>grundvatten:SE.GOV.SGU.GRUNDVATTEN.BERG.1M</Name>
+              <Title>Grundvattenkapacitet i berggrunden</Title>
+              <SRS>EPSG:4326</SRS>
+              <LatLonBoundingBox minx="8.2161154259" miny="54.8702764365" maxx="25.8912035658" maxy="69.3890346329" />
+            </Layer>
+            <Layer queryable="0" opaque="0" noSubsets="0">
+              <Name>grundvatten:SE.GOV.SGU.GRUNDVATTEN.JORD.1M</Name>
+              <Title>Grundvattenkapacitet i jordlagren</Title>
+              <SRS>EPSG:4326</SRS>
+              <LatLonBoundingBox minx="8.2161154259" miny="54.8702764365" maxx="25.8912035658" maxy="69.3890346329" />
+            </Layer>
+            <Layer queryable="0" opaque="0" noSubsets="0">
+              <Name>grundvatten:SE.GOV.SGU.GRUNDVATTEN.MANADSKARTA</Name>
+              <Title>Månadskarta</Title>
+              <SRS>EPSG:4326</SRS>
+              <LatLonBoundingBox minx="8.2161154259" miny="54.8702764365" maxx="25.8912035658" maxy="69.3890346329" />
+            </Layer>
+            <Layer queryable="0" opaque="0" noSubsets="0">
+              <Name>grundvatten:SE.GOV.SGU.GRUNDVATTENNIVA_STN</Name>
+              <Title>Grundvattennivå</Title>
+              <SRS>EPSG:4326</SRS>
+              <LatLonBoundingBox minx="8.2161154259" miny="54.8702764365" maxx="25.8912035658" maxy="69.3890346329" />
+            </Layer>
+            <Layer queryable="0" opaque="0" noSubsets="0">
+                <Name>grundvatten:SE.GOV.SGU.KALLOR.1M</Name>
+                <Title>Källor</Title>
+                <SRS>EPSG:4326</SRS>
+                <LatLonBoundingBox minx="8.2161154259" miny="54.8702764365" maxx="25.8912035658" maxy="69.3890346329" />
+            </Layer>  
+            <Layer queryable="0" opaque="0" noSubsets="0">
+                <Name>grundvatten:SE.GOV.SGU.NATIONELL_MILJOOVERVAKNING_GRUNDVATTEN_VY</Name>
+                <Title>Nationell miljöövervakning grundvatten</Title>
+                <SRS>EPSG:4326</SRS>
+                <LatLonBoundingBox minx="8.2161154259" miny="54.8702764365" maxx="25.8912035658" maxy="69.3890346329" />
+            </Layer>
+              <Layer queryable="1" opaque="0" noSubsets="0">
+                <Name>grundvatten:SE.GOV.SGU.REGIONAL_MILJOOVERVAKNING_GRUNDVATTEN_VY</Name>
+                <Title>Regional miljöövervakning grundvatten</Title>
+                <SRS>EPSG:4326</SRS>
+                <LatLonBoundingBox minx="9.7678598128" miny="55.2777724168" maxx="22.6418924928" maxy="65.8017674785" />
+                <ScaleHint min="0" max="NaN" />
+            </Layer>
+        </Layer>
+    </Capability>
+</WMT_MS_Capabilities>

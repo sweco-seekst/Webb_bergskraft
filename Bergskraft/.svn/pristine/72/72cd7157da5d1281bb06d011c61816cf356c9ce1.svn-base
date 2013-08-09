@@ -1,0 +1,210 @@
+﻿<?xml version="1.0"?>
+<!-- 
+    Note: As an alternative to hand editing this file you can use the 
+    web admin tool to configure settings for your application. Use
+    the Website->Asp.Net Configuration option in Visual Studio.
+    A full list of settings and comments can be found in 
+    machine.config.comments usually located in 
+    \Windows\Microsoft.Net\Framework\v2.x\Config 
+-->
+<configuration>
+  <configSections>
+    <sectionGroup name="system.web.extensions" type="System.Web.Configuration.SystemWebExtensionsSectionGroup, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+      <sectionGroup name="scripting" type="System.Web.Configuration.ScriptingSectionGroup, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+        <section name="scriptResourceHandler" type="System.Web.Configuration.ScriptingScriptResourceHandlerSection, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" allowDefinition="MachineToApplication"/>
+        <sectionGroup name="webServices" type="System.Web.Configuration.ScriptingWebServicesSectionGroup, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35">
+          <section name="jsonSerialization" type="System.Web.Configuration.ScriptingJsonSerializationSection, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" allowDefinition="Everywhere"/>
+          <section name="profileService" type="System.Web.Configuration.ScriptingProfileServiceSection, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" allowDefinition="MachineToApplication"/>
+          <section name="authenticationService" type="System.Web.Configuration.ScriptingAuthenticationServiceSection, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" allowDefinition="MachineToApplication"/>
+          <section name="roleService" type="System.Web.Configuration.ScriptingRoleServiceSection, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" requirePermission="false" allowDefinition="MachineToApplication"/>
+        </sectionGroup>
+      </sectionGroup>
+    </sectionGroup>
+  </configSections>
+  <appSettings>
+    <!--<add key="pageImgPath" value="/BerGIS/pageImages/"/>-->
+    <!--<add key="pageImgPath" value="http://orebro.sweco.se/Bergskraft/pageImages/"/>-->
+    <add key="pageImgPath" value="http://81.216.43.111/BergisDoc/"/>
+    <!--<add key="pageImgPath" value="C:\Projekt\workspace\Data Bergskraft\BKIBAS\BBPROC\"/>-->
+    <add key="timesUpImage" value="\App_Themes\Bergskraft1\images\timesUp.jpg"/>
+    <add key="errorPic" value="\images\error-pic.jpg"/>
+    <add key="ImgCatalog" value="PageImages/"/>
+    <!-- The mail adress that is used when a new account is created also used in billingprocess-->
+    <add key="smtpFromAdress" value="WeBerGIS@bergskraft.se"/>
+    <!--When user chooses billingmethod instead of SMS these parameters are used.-->
+    <add key="mailAdressBillingInfo" value="etteteset@sdfsf.se"/>
+    <add key="billingInformationSubject" value="Faktureringsförfrågan"/>
+    <add key="billingInformationLengthTxt" value="Faktureringslängd:"/>
+    <add key="billingInformationBody" value="En ny faktureringsförfrågan har begärts på weBerGIS, användarens information ses nedan."/>
+    <add key="userInfoSaveFailed" value="Ett fel uppstod när användarinformationen skulle sparas."/>
+    <add key="userInfoMailFailed" value="Ett fel uppstod när faktureringsförfrågan gjordes, vänligen kontakta Bergskraft"/>
+    <add key="userAlterTimeSuccess" value="Faktureringsförfrågan har gjorts och er visningstid har ändrats."/>
+    <add key="userAlterTimeFailed" value="Ett fel uppstod när faktureringsförfrågan gjordes, vänligen kontakta Bergskraft"/>
+    <add key="confirmationURL" value="http://orebro.sweco.se/Bergskraft/services/ConfirmEmail.aspx"/>
+    <!-- PageCount Parameter -->
+    <add key="maxCount" value="99999"/>
+    <!-- Payment Parameters -->
+    <!-- Key! -->
+    <add key="PaymentKey" value="BKbs09"/>
+    <!-- Timerkey for making result count.-->
+    <add key="searchTimer" value="1000"/>
+    <!-- prefix and timein hours -->
+    <add key="PaymentPrefix" value="20:1-50:3-100:24"/>
+    <!-- Text to return to user. Allowed codes: [code], [tariff], [payedToDate] -->
+    <add key="PaymentOkText" value="Välkommen till Bergskraft, din kod är: [code]. Du har betalat [tariff] kr [payedToDate]."/>
+    <!-- Text to return to user. Allowed codes: [code], [payedToDate] -->
+    <add key="PaymentErrorText" value="Det uppstod ett fel när betalningen skulle verifieras. Felet loggat men vi ber er att kontakta Bergskraft för att rätta till felet. 555-123 123 123"/>
+  </appSettings>
+  <connectionStrings>
+    <!--<add name="SqlConn" connectionString="Server=localhost;database=Bergskraft;user id=sa;password=sapwd" providerName="System.Data.SqlClient"/>-->
+    <!--<add name="SqlConn" connectionString="Server=PC-ORE-5502;database=Bergskraft2;user id=sa;password=sapwd"  providerName="System.Data.SqlClient" />-->
+    <add name="SqlConn" connectionString="Data Source=PCORE10081\SQLEXPRESS;Initial Catalog=BergisAdmin2013;Persist Security Info=True;User ID=sa;Password=sapwd_1234" providerName="System.Data.SqlClient"/>
+    <!--<add name="SqlConn" connectionString="Server=10.10.11.10;database=BergisAdmin2012;user id=sa;password=sapwd" providerName="System.Data.SqlClient"/>-->
+    <!--<add name="webBerGISConnectionString" connectionString="Data Source=PC-ORE-5515\MSSQL;Initial Catalog=webBerGIS;Integrated Security=True"
+      providerName="System.Data.SqlClient" />-->
+  </connectionStrings>
+  <system.web>
+    <compilation defaultLanguage="c#" debug="true">
+      <assemblies>
+        <add assembly="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <add assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+        <add assembly="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <add assembly="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <add assembly="System.Data.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+      </assemblies>
+    </compilation>
+    <authentication mode="Forms">
+      <forms loginUrl="Default.aspx" timeout="20160" slidingExpiration="true"/>
+    </authentication>
+    <membership defaultProvider="BerGisMembershipProvider" userIsOnlineTimeWindow="3">
+      <providers>
+        <clear/>
+        <add connectionStringName="SqlConn" name="BerGisMembershipProvider" type="System.Web.Security.SqlMembershipProvider" applicationName="BerGis" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="true" requiresUniqueEmail="false" passwordFormat="Hashed" maxInvalidPasswordAttempts="5" passwordAttemptWindow="10" minRequiredPasswordLength="5" minRequiredNonalphanumericCharacters="0"/>
+      </providers>
+    </membership>
+    <roleManager defaultProvider="BerGisRoleProvider" enabled="true">
+      <providers>
+        <clear/>
+        <add connectionStringName="SqlConn" name="BerGisRoleProvider" type="System.Web.Security.SqlRoleProvider" applicationName="BerGis"/>
+      </providers>
+    </roleManager>
+    <!--  mode="On" or "RemoteOnly" -->
+    <customErrors mode="Off"/>
+    <!--<customErrors mode="RemoteOnly" defaultRedirect="GenericErrorPage.htm">
+            <error statusCode="403" redirect="NoAccess.htm" />
+            <error statusCode="404" redirect="FileNotFound.htm" />
+      </customErrors>-->
+    <pages>
+      <controls>
+        <add tagPrefix="asp" namespace="System.Web.UI" assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+        <add tagPrefix="asp" namespace="System.Web.UI.WebControls" assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+      </controls>
+    </pages>
+    <httpHandlers>
+      <remove verb="*" path="*.asmx"/>
+      <add verb="*" path="*.asmx" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+      <add verb="*" path="*_AppService.axd" validate="false" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+      <add verb="GET,HEAD" path="ScriptResource.axd" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" validate="false"/>
+    </httpHandlers>
+    <httpModules>
+      <add name="ScriptModule" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+    </httpModules>
+  </system.web>
+  <location path="Users/RoleAdministration.aspx">
+    <system.web>
+      <authorization>
+        <!-- Anonymous users -->
+        <deny users="?"/>
+        <!-- Users that are memebers of SiteAdmin -->
+        <allow roles="SiteAdmin"/>
+        <!-- Authenticated users -->
+        <deny users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="documentViewer.aspx">
+    <system.web>
+      <authorization>
+        <deny users="?"/>
+      </authorization>
+    </system.web>
+  </location>
+  <!--<location path="Default2.aspx">
+    <system.web>
+      <authorization>
+        -->
+  <!-- Anonymous users -->
+  <!--
+        <deny users="?"/>
+        -->
+  <!-- Users that are memebers of SiteAdmin -->
+  <!--
+        <allow roles="All"/>
+        -->
+  <!-- Authenticated users -->
+  <!--
+        <deny users="*"/>
+      </authorization>
+    </system.web>
+  </location>-->
+  <system.net>
+    <mailSettings>
+      <smtp>
+        <network host="customer-relay.songnetworks.se" password="" port="25" userName=""/>
+      </smtp>
+    </mailSettings>
+  </system.net>
+  <system.codedom>
+    <compilers>
+      <compiler language="c#;cs;csharp" extension=".cs" warningLevel="4" type="Microsoft.CSharp.CSharpCodeProvider, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <providerOption name="CompilerVersion" value="v3.5"/>
+        <providerOption name="WarnAsError" value="false"/>
+      </compiler>
+      <compiler language="vb;vbs;visualbasic;vbscript" extension=".vb" warningLevel="4" type="Microsoft.VisualBasic.VBCodeProvider, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+        <providerOption name="CompilerVersion" value="v3.5"/>
+        <providerOption name="OptionInfer" value="true"/>
+        <providerOption name="WarnAsError" value="false"/>
+      </compiler>
+    </compilers>
+  </system.codedom>
+  <!-- 
+        The system.webServer section is required for running ASP.NET AJAX under Internet
+        Information Services 7.0.  It is not necessary for previous version of IIS.
+    -->
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false"/>
+    <modules>
+      <remove name="ScriptModule"/>
+      <add name="ScriptModule" preCondition="managedHandler" type="System.Web.Handlers.ScriptModule, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+    </modules>
+    <handlers>
+      <remove name="WebServiceHandlerFactory-Integrated"/>
+      <remove name="ScriptHandlerFactory"/>
+      <remove name="ScriptHandlerFactoryAppServices"/>
+      <remove name="ScriptResource"/>
+      <add name="ScriptHandlerFactory" verb="*" path="*.asmx" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+      <add name="ScriptHandlerFactoryAppServices" verb="*" path="*_AppService.axd" preCondition="integratedMode" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+      <add name="ScriptResource" preCondition="integratedMode" verb="GET,HEAD" path="ScriptResource.axd" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+    </handlers>
+  </system.webServer>
+  <runtime>
+    <assemblyBinding appliesTo="v2.0.50727" xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Extensions" publicKeyToken="31bf3856ad364e35"/>
+        <bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="3.5.0.0"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Extensions.Design" publicKeyToken="31bf3856ad364e35"/>
+        <bindingRedirect oldVersion="1.0.0.0-1.1.0.0" newVersion="3.5.0.0"/>
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <!-- added to support client login, dvdo/debe-->
+  <system.web.extensions>
+    <scripting>
+      <webServices>
+        <authenticationService enabled="true" requireSSL="false"/>
+      </webServices>
+    </scripting>
+  </system.web.extensions>
+</configuration>

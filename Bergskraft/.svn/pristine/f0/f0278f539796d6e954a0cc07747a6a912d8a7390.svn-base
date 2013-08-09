@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+    </configSections>
+    <connectionStrings>
+        <add name="BerGisDal.Properties.Settings.BerGisDalConnectionString"
+            connectionString="Data Source=PC-ORE-5515;Initial Catalog=BerGIS;Integrated Security=True"
+            providerName="System.Data.SqlClient" />
+        <add name="BerGisDal.Properties.Settings.BergskraftConnectionString"
+            connectionString="Data Source=PC-ORE-5515;Initial Catalog=BerGIS;Integrated Security=True"
+            providerName="System.Data.SqlClient" />
+        <add name="BerGisDal.Properties.Settings.BerGISConnectionString"
+            connectionString="Data Source=PC-ORE-5515;Initial Catalog=BerGIS;User ID=sa;Password=sapwd"
+            providerName="System.Data.SqlClient" />
+        <add name="BerGisDal.Properties.Settings.Bergskraft2ConnectionString"
+            connectionString="Data Source=PC-ORE-5502;Initial Catalog=Bergskraft2;Integrated Security=True"
+            providerName="System.Data.SqlClient" />
+        <add name="BerGisDal.Properties.Settings.BerGISConnectionString1"
+            connectionString="Data Source=10.10.11.10;Initial Catalog=BergisAdmin_new;Persist Security Info=True;User ID=sa;Password=sapwd"
+            providerName="System.Data.SqlClient" />
+        <add name="BerGisDal.Properties.Settings.BergskraftTest1ConnectionString"
+            connectionString="Data Source=PC-ORE-5515;Initial Catalog=BergskraftTest1;User ID=sa;Password=sapwd"
+            providerName="System.Data.SqlClient" />
+        <add name="BerGisDal.Properties.Settings.BergisAdmin_newConnectionString"
+            connectionString="Data Source=10.10.11.10;Initial Catalog=BergisAdmin2012;User ID=sa"
+            providerName="System.Data.SqlClient" />
+        <add name="BerGisDal.Properties.Settings.BergisAdmin2012ConnectionString"
+            connectionString="Data Source=10.10.11.10;Initial Catalog=BergisAdmin2012;User ID=sa;Password=sapwd"
+            providerName="System.Data.SqlClient" />
+    </connectionStrings>
+</configuration>
