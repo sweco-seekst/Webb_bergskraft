@@ -106,10 +106,10 @@ function populateAccordionCallback(data) {
             catch (ex) {
                 alert("Error in AJAX request!");
             }
-            createAccordionHeader(i, this.date, this.comment, htmlObjectInfo, data.length);
+            createAccordionHeader(i, this.date, this.comment, htmlObjectInfo, data.length, this.C_id);
             
         } else {
-            createAccordionHeader(i, this.date, this.comment, this.objectInfo, data.length);
+            createAccordionHeader(i, this.date, this.comment, this.objectInfo, data.length, this.C_id);
             
         }
     });
@@ -119,7 +119,20 @@ function setObjectInfo(data, i) {
     htmlObjectInfo = data;
 }
 
-function createAccordionHeader(id, date, comment, objectInfo, length) {
+function setFixedProblem(cid) {
+    var ok = confirm("Markera problem som åtgärdat?");
+    if (ok) {
+        $.get("proxy.aspx?url=" + baseUrl + "/post/" + cid, function (data) {
+            if (data == '"success"') {
+                location.reload(true);
+            } else {
+                alert("Ändringen registrerades inte!");
+            }
+        });
+    }
+}
+
+function createAccordionHeader(id, date, comment, objectInfo, length, cid) {
     $container = $('<div id="container' + id + '" class="accordion-group"></div>');
     $header = $('<div class="accordion-heading"></div>');
     $header.append($('<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#' + id + '">' + date + '</a>'));
@@ -128,6 +141,7 @@ function createAccordionHeader(id, date, comment, objectInfo, length) {
 
     $body = $('<div id="' + id + '" class="accordion-body collapse in"></div>');
     $body.append($('<div class="accordion-inner origDialog">' + objectInfo + '</div>'));
+    $body.append($('<button class="atgButton" onclick="setFixedProblem(' + cid + ')">Åtgärdat</input>'));
 
     $container.append($header);
     

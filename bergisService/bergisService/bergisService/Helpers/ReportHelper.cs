@@ -17,7 +17,7 @@ namespace bergisService.Helpers
             List<ReportProblem> entryList = new List<ReportProblem>();
             using (ReportEntities context = new ReportEntities())
             {
-                entryList = context.ReportProblem.Select(d => d).ToList();
+                entryList = context.ReportProblem.Where(s => s.status == 0).Select(d => d).ToList();
 
             }
             if (entryList.Count != 0)
@@ -69,7 +69,7 @@ namespace bergisService.Helpers
             List<ReportProblem> entryList = new List<ReportProblem>();
             using (ReportEntities context = new ReportEntities())
             {
-                entryList = context.ReportProblem.Where(d => d.date == id).Select(d => d).ToList();
+                entryList = context.ReportProblem.Where(d => d.date == id).Where(s => s.status == 0).Select(d => d).ToList();
 
             }
             if (entryList.Count != 0)

@@ -113,10 +113,17 @@ box-shadow: 0 0 6px rgba(0,0,0,0.3);
     display: none;
     float: right;
     width: 958px;
-margin-top: 14px;
+    margin-top: 14px;
     overflow-y: auto;
     height:670px;
 }
+
+.atgButton {
+    float: left;
+    margin-left: 55px;
+    margin-bottom: 15px;
+}
+
 .accordion a
 {
    color:  rgb(15, 15, 15);

@@ -15,7 +15,7 @@ namespace bergisService.Helpers
             dateList.Add("Failed");
             using (ReportEntities context = new ReportEntities())
             {
-                tempList = context.ReportProblem.Select(d => d.date).ToList();
+                tempList = context.ReportProblem.Where(s => s.status == 0).Select(d => d.date).ToList();
                 
             }
             if (tempList.Count != 0)

@@ -4,9 +4,9 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ReportModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="ReportModelStoreContainer">
-          <EntitySet Name="ReportProblem" EntityType="ReportModel.Store.ReportProblem" store:Type="Tables" Schema="dbo" />
+      <Schema Namespace="BergisAdmin2013Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BergisAdmin2013ModelStoreContainer">
+          <EntitySet Name="ReportProblem" EntityType="BergisAdmin2013Model.Store.ReportProblem" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="ReportProblem">
           <Key>
@@ -16,14 +16,15 @@
           <Property Name="objectInfo" Type="nvarchar(max)" />
           <Property Name="C_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="date" Type="nvarchar(max)" />
+          <Property Name="status" Type="int" />
         </EntityType>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ReportModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="ReportEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ReportProblem" EntityType="ReportModel.ReportProblem" />
+      <Schema Namespace="BergisAdmin2013Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="BergisAdmin2013Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ReportProblem" EntityType="BergisAdmin2013Model.ReportProblem" />
         </EntityContainer>
         <EntityType Name="ReportProblem">
           <Key>
@@ -33,20 +34,22 @@
           <Property Name="objectInfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="C_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="date" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="status" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ReportModelStoreContainer" CdmEntityContainer="ReportEntities">
+        <EntityContainerMapping StorageEntityContainer="BergisAdmin2013ModelStoreContainer" CdmEntityContainer="BergisAdmin2013Entities">
           <EntitySetMapping Name="ReportProblem">
-            <EntityTypeMapping TypeName="ReportModel.ReportProblem">
+            <EntityTypeMapping TypeName="BergisAdmin2013Model.ReportProblem">
               <MappingFragment StoreEntitySet="ReportProblem">
                 <ScalarProperty Name="comment" ColumnName="comment" />
                 <ScalarProperty Name="objectInfo" ColumnName="objectInfo" />
                 <ScalarProperty Name="C_id" ColumnName="C_id" />
                 <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

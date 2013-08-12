@@ -12,7 +12,7 @@ namespace bergisService.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class ReportEntities : DbContext
     {
         public ReportEntities()

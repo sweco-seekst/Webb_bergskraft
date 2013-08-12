@@ -19,5 +19,11 @@ namespace bergisService.Models
 
             return result;
         }
+
+        public string ChangeStatus(int id)
+        {
+            PostHelper helper = new PostHelper();
+            return helper.ChangeStatus(id);
+        }
     }
 }

@@ -30,5 +30,21 @@ namespace bergisService.Helpers
             return result;
         }
 
+        public string ChangeStatus(int id)
+        {
+            var result = "failed";
+
+            using (ReportEntities context = new ReportEntities())
+            {
+                context.ReportProblem.Where(d => d.C_id == id).Select(s => s).FirstOrDefault().status = 1;
+                if (context.SaveChanges() == 1)
+                {
+                    result = "success";
+                }
+            }
+
+            return result;
+        }
+
     }
 }

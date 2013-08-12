@@ -19,7 +19,8 @@ namespace bergisService.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            PostService service = new PostService();
+            return service.ChangeStatus(id);
         }
 
         // POST api/values

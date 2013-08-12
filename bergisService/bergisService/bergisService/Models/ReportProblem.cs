@@ -18,5 +18,6 @@ namespace bergisService.Models
         public string objectInfo { get; set; }
         public int C_id { get; set; }
         public string date { get; set; }
+        public Nullable<int> status { get; set; }
     }
 }

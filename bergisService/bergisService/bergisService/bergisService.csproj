@@ -142,24 +142,24 @@
     <Compile Include="Helpers\SearchHelper.cs" />
     <Compile Include="Models\DateService.cs" />
     <Compile Include="Models\PostData.cs" />
+    <Compile Include="Models\PostModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\PostService.cs" />
-    <Compile Include="Models\ReportContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ReportContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ReportContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportContext.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\ReportProblem.cs">
-      <DependentUpon>ReportContext.tt</DependentUpon>
+      <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ReportService.cs" />
     <Compile Include="Models\SearchService.cs" />
@@ -222,22 +222,22 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\ReportContext.edmx">
+    <EntityDeploy Include="Models\PostModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ReportContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>PostModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ReportContext.Context.tt">
+    <Content Include="Models\PostModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ReportContext.edmx</DependentUpon>
-      <LastGenOutput>ReportContext.Context.cs</LastGenOutput>
+      <DependentUpon>PostModel.edmx</DependentUpon>
+      <LastGenOutput>PostModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ReportContext.edmx.diagram">
-      <DependentUpon>ReportContext.edmx</DependentUpon>
+    <Content Include="Models\PostModel.edmx.diagram">
+      <DependentUpon>PostModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\ReportContext.tt">
+    <Content Include="Models\PostModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ReportContext.edmx</DependentUpon>
-      <LastGenOutput>ReportContext.cs</LastGenOutput>
+      <DependentUpon>PostModel.edmx</DependentUpon>
+      <LastGenOutput>PostModel.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
