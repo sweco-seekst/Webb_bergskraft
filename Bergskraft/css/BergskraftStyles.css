@@ -1217,3 +1217,31 @@ body .ui-resizable-se {
     color: Red;
     font-size: 10px;
 }
+
+#ReportButton {
+    -webkit-border-radius: 4px;
+    cursor: pointer;
+    background: #dfa61e url(../images/search-btn-bg.gif) left 0 repeat-x;
+    border: 1px solid #a98329;
+    color: #625035;
+    float: left;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+    padding: 4px 0;
+    width: 155px;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+.ReportButton {
+    -webkit-border-radius: 4px;
+    cursor: pointer;
+    background: #dfa61e url(../images/search-btn-bg.gif) left 0 repeat-x;
+    border: 1px solid #a98329;
+    color: #625035;
+    float: left;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+    padding: 4px 0;
+    width: 155px;
+    text-shadow: 1px 1px 0 #fff;
+}

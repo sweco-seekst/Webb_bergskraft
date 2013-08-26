@@ -122,6 +122,18 @@ box-shadow: 0 0 6px rgba(0,0,0,0.3);
     float: left;
     margin-left: 55px;
     margin-bottom: 15px;
+    border: 1px solid #d99702;
+    height: 42px;
+    width: 100px;
+    padding: 0;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+    color: #fafafa;
+    background-color: #d99702;
+}
+
+.atgButton:hover {
+    background-color: #cc9009;
 }
 
 .accordion a

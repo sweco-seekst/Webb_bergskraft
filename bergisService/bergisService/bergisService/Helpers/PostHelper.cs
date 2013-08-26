@@ -19,6 +19,7 @@ namespace bergisService.Helpers
                 report.comment = comment;
                 report.objectInfo = objectInfo;
                 report.date = date;
+                report.status = 0;
                 context.ReportProblem.Add(report);
 
                 if (context.SaveChanges() == 1)

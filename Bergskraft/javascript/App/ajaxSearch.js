@@ -476,7 +476,7 @@ Bergis.Search.objectView = function (sXml) {
                         jQuery("</ul>").appendTo(".workFields" + j);
                     }
                 }
-                jQuery("<input type='button' id='ReportButton" + i + "_" + j + "' value='Rapportera problem' class='ReportButton' />").appendTo(".DepositFields");
+                jQuery("<input type='button' id='ReportButton" + i + "_" + j + "' value='Rapportera problem' class='ReportButton' /><br><br>").appendTo(".DepositFields");
             }
         }
         var UCminingFieldData = arrData[i].UCminingFields;
