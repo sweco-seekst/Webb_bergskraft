@@ -1,1 +1,0 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="getWidthHeight.aspx.cs" ContentType="text/html; charset=windows-1252" Inherits="services_getWidthHeight" %>
