@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd">
+  <WMT_MS_Capabilities version="1.1.1">
+      <Service>
+        <Name>OGC:WMS</Name>
+        <Title>Web Map Service wms_taktprod</Title>
+        <Abstract>ArcIMS 9.1.0wms_taktprod Web Map Service</Abstract>
+          <KeywordList>
+            <Keyword>ArcIMS</Keyword>
+        </KeywordList>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_taktprod?" xlink:type="simple" />
+          <ContactInformation>
+              <ContactPersonPrimary>
+                <ContactPerson />
+                <ContactOrganization />
+            </ContactPersonPrimary>
+            <ContactPosition />
+              <ContactAddress>
+                <AddressType>postal</AddressType>
+                <Address />
+                <City />
+                <StateOrProvince />
+                <PostCode />
+                <Country />
+            </ContactAddress>
+            <ContactVoiceTelephone />
+            <ContactFacsimileTelephone />
+            <ContactElectronicMailAddress />
+        </ContactInformation>
+        <Fees>none</Fees>
+        <AccessConstraints>none</AccessConstraints>
+    </Service>
+      <Capability>
+          <Request>
+              <GetCapabilities>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                  <DCPType>
+                      <HTTP>
+                          <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_taktprod?" xlink:type="simple" />
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetCapabilities>
+              <GetMap>
+                <Format>image/png</Format>
+                <Format>image/jpeg</Format>
+                  <DCPType>
+                      <HTTP>
+                          <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_taktprod?" xlink:type="simple" />
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetMap>
+              <GetFeatureInfo>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                <Format>text/xml</Format>
+                <Format>text/html</Format>
+                <Format>text/plain</Format>
+                  <DCPType>
+                      <HTTP>
+                          <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_taktprod?" xlink:type="simple" />
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetFeatureInfo>
+        </Request>
+          <Exception>
+            <Format>application/vnd.ogc.se_xml</Format>
+            <Format>application/vnd.ogc.se_inimage</Format>
+            <Format>application/vnd.ogc.se_blank</Format>
+        </Exception>
+          <Layer queryable="0" opaque="0" noSubsets="0">
+            <Title>wms_taktprod</Title>
+            <SRS>EPSG:4326</SRS>
+            <SRS>EPSG:2400</SRS>
+            <SRS>EPSG:4267</SRS>
+            <SRS>EPSG:4269</SRS>
+            <LatLonBoundingBox minx="8.1783978355" miny="54.8703662192" maxx="25.8884234321" maxy="69.3890366417" />
+            <BoundingBox SRS="EPSG:2400" minx="1220965.00002742" miny="6136825.99933369" maxx="1883643.49997259" maxy="7670799.50066632" />
+              <Layer queryable="1" opaque="0" noSubsets="0">
+                <Name>Övrigt</Name>
+                <Title>Övrigt (ton 2007)</Title>
+                <SRS>EPSG:4326</SRS>
+                <LatLonBoundingBox minx="8.9701910219" miny="55.2668239337" maxx="24.9153196443" maxy="68.5327999067" />
+            </Layer>
+              <Layer queryable="1" opaque="0" noSubsets="0">
+                <Name>Industrimaterial</Name>
+                <Title>Täkter för industrimaterial (Produktion i ton 2007)</Title>
+                <SRS>EPSG:4326</SRS>
+                <LatLonBoundingBox minx="8.9701910219" miny="55.2668239337" maxx="24.9153196443" maxy="68.5327999067" />
+            </Layer>
+              <Layer queryable="1" opaque="0" noSubsets="0">
+                <Name>Natursten</Name>
+                <Title>Täkter för natursten (Produktion i ton 2007)</Title>
+                <SRS>EPSG:4326</SRS>
+                <LatLonBoundingBox minx="8.9701910219" miny="55.2668239337" maxx="24.9153196443" maxy="68.5327999067" />
+            </Layer>
+              <Layer queryable="1" opaque="0" noSubsets="0">
+                <Name>Moräntäkter</Name>
+                <Title>Moräntäkter (Produktion i ton 2007)</Title>
+                <SRS>EPSG:4326</SRS>
+                <LatLonBoundingBox minx="8.9701910219" miny="55.2668239337" maxx="24.9153196443" maxy="68.5327999067" />
+            </Layer>
+              <Layer queryable="1" opaque="0" noSubsets="0">
+                <Name>Bergtäkter</Name>
+                <Title>Bergtäkter (Krossbergsproduktion i ton 2007)</Title>
+                <SRS>EPSG:4326</SRS>
+                <LatLonBoundingBox minx="8.9701910219" miny="55.2668239337" maxx="24.9153196443" maxy="68.5327999067" />
+            </Layer>
+              <Layer queryable="1" opaque="0" noSubsets="0">
+                <Name>Naturgrustäkter</Name>
+                <Title>Naturgrustäkter (Produktion i ton 2007)</Title>
+                <SRS>EPSG:4326</SRS>
+                <LatLonBoundingBox minx="8.9701910219" miny="55.2668239337" maxx="24.9153196443" maxy="68.5327999067" />
+            </Layer>
+        </Layer>
+    </Capability>
+</WMT_MS_Capabilities>

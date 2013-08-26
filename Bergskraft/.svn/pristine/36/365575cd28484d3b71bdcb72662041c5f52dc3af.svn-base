@@ -1,0 +1,189 @@
+﻿#toolBar div { 
+    float:left;
+    display:block;
+    width:  24px;
+    height: 24px;
+    margin: 5px;
+}
+
+
+/* Panorera */
+
+#toolBar .olControlNavigationItemActive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/panActive.png");
+}
+#toolBar .olControlNavigationItemInactive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/panDeActive.png");
+}
+#toolBar .olControlNavigationItemInactive:hover { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/panHover.png");
+    cursor:pointer;
+}
+
+
+/* Zooma in */
+
+#toolBar .olControlZoomBoxItemActive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/zoomActive.png");
+}
+#toolBar .olControlZoomBoxItemInactive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/zoomDeActive.png");
+}
+#toolBar .olControlZoomBoxItemInactive:hover { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/zoomHover.png");
+    cursor:pointer;
+}
+
+
+/* Zooma ut */
+
+#toolBar .olControlZoomOutBoxItemActive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/zoomOutActive.png");
+}
+#toolBar .olControlZoomOutBoxItemInactive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/zoomOutDeActive.png");
+}
+#toolBar .olControlZoomOutBoxItemInactive:hover { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/zoomOutHover.png");
+    cursor:pointer;
+}
+
+
+/* Info */
+
+#toolBar .olControlIdentifyItemActive{
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/identifyActive.png");
+}
+#toolBar .olControlIdentifyItemInactive{
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/identifyDeActive.png");
+}
+#toolBar .olControlIdentifyItemInactive:hover{
+    width:  36px;  
+    height: 36px;
+    background-image: url("../images/identifyHover.png");
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#toolBar .olControlZoomToMaxExtentItemInactive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/globeDeActive.png");
+}
+#toolBar .olControlZoomToMaxExtentItemInactive:hover { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/globeDeActive.png");
+    cursor:pointer;
+}
+
+#toolBar .olControlNavigationHistoryPreviousItemActive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/lastViewActive.png");
+}
+#toolBar .olControlNavigationHistoryPreviousItemInactive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/lastViewDeActive.png");
+}
+#toolBar .olControlNavigationHistoryPreviousItemActive:hover { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/lastViewActive.png");
+    cursor:pointer;
+}
+#toolBar .olControlNavigationHistoryNextItemActive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/nextViewActive.png");
+    cursor:pointer;
+}
+#toolBar .olControlNavigationHistoryNextItemInactive { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/nextViewDeActive.png");
+}
+#toolBar .olControlNavigationHistoryNextItemInactive:hover { 
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/nextViewDeActive.png");
+    
+}
+#toolBar .olControlZoomInItemInactive {
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/zoomInDeActive.png");
+}
+#toolBar .olControlZoomInItemInactive:hover {
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/zoomInDeActive.png");
+    cursor:pointer;
+}
+#toolBar .olControlZoomOutItemInactive {
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/zoomOutDeActive.png");
+}
+#toolBar .olControlZoomOutItemInactive:hover{
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/zoomOutDeActive.png");
+    cursor:pointer;
+}
+#toolBar .aboutBergisButtonItemInactive{
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/aboutDeActive.png");
+}
+#toolBar .aboutBergisButtonItemInactive:hover{
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/aboutActive.png");
+    cursor:pointer;
+}
+#toolBar .printMapButtonItemInactive{
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/printDeActive.png");
+}
+#toolBar .printMapButtonItemInactive:hover{
+    width:  36px;  
+    height: 36px;
+    background-image: url("images/printActive.png");
+    cursor:pointer;
+}

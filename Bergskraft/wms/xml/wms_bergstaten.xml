@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE WMT_MS_Capabilities SYSTEM "http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd">
+  <WMT_MS_Capabilities version="1.1.1">
+      <Service>
+        <Name>OGC:WMS</Name>
+        <Title>Web Map Service wms_biogeokemi_cu</Title>
+        <Abstract>ArcIMS 9.1.0wms_biogeokemi_cu Web Map Service</Abstract>
+          <KeywordList>
+            <Keyword>ArcIMS</Keyword>
+        </KeywordList>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_biogeokemi_cu?" xlink:type="simple" />
+          <ContactInformation>
+              <ContactPersonPrimary>
+                <ContactPerson>Kundtjänst</ContactPerson>
+                <ContactOrganization />
+            </ContactPersonPrimary>
+            <ContactPosition />
+              <ContactAddress>
+                <AddressType>postal</AddressType>
+                <Address />
+                <City />
+                <StateOrProvince />
+                <PostCode />
+                <Country />
+            </ContactAddress>
+            <ContactVoiceTelephone />
+            <ContactFacsimileTelephone />
+            <ContactElectronicMailAddress />
+        </ContactInformation>
+        <Fees>none</Fees>
+        <AccessConstraints>none</AccessConstraints>
+    </Service>
+      <Capability>
+          <Request>
+              <GetCapabilities>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                  <DCPType>
+                      <HTTP>
+                          <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_biogeokemi_cu?" xlink:type="simple" />
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetCapabilities>
+              <GetMap>
+                <Format>image/png</Format>
+                <Format>image/jpeg</Format>
+                  <DCPType>
+                      <HTTP>
+                          <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_biogeokemi_cu?" xlink:type="simple" />
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetMap>
+              <GetFeatureInfo>
+                <Format>application/vnd.ogc.wms_xml</Format>
+                <Format>text/xml</Format>
+                <Format>text/html</Format>
+                <Format>text/plain</Format>
+                  <DCPType>
+                      <HTTP>
+                          <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://maps.sgu.se:80/wmsconnector/com.esri.wms.Esrimap/wms_biogeokemi_cu?" xlink:type="simple" />
+                        </Get>
+                    </HTTP>
+                </DCPType>
+            </GetFeatureInfo>
+        </Request>
+          <Exception>
+            <Format>application/vnd.ogc.se_xml</Format>
+            <Format>application/vnd.ogc.se_inimage</Format>
+            <Format>application/vnd.ogc.se_blank</Format>
+        </Exception>
+          <Layer queryable="0" opaque="0" noSubsets="0">
+            <Title>wms_biogeokemi_cu</Title>
+            <SRS>EPSG:4326</SRS>
+            <SRS>EPSG:2400</SRS>
+            <SRS>EPSG:4267</SRS>
+            <SRS>EPSG:4269</SRS>
+            <LatLonBoundingBox minx="-3.2035576888" miny="53.8035870085" maxx="37.3981100899" maxy="69.44121709" />
+            <BoundingBox SRS="EPSG:2400" minx="1200000.00000031" miny="6099999.99999976" maxx="1900112.48593954" maxy="7699999.99999969" />
+            <Layer queryable="1">
+              <Name>MRR:SE.GOV.SGU.MRR.BEARBETNINGSKONCESSIONER_APPROVED_VY</Name>
+              <Title>Beviljade bearbetningskoncessioner</Title>
+              <Abstract>mrr_appr_ec_vy</Abstract>
+              <KeywordList/>
+              <CRS>EPSG:3006</CRS>
+              <CRS>CRS:84</CRS>
+              <EX_GeographicBoundingBox>
+                <westBoundLongitude>11.248</westBoundLongitude>
+                <eastBoundLongitude>23.508</eastBoundLongitude>
+                <southBoundLatitude>55.873</southBoundLatitude>
+                <northBoundLatitude>67.988</northBoundLatitude>
+              </EX_GeographicBoundingBox>
+              <BoundingBox CRS="CRS:84" minx="11.248" miny="55.873" maxx="23.508" maxy="67.988"/>
+              <BoundingBox CRS="EPSG:3006" minx="6206788.0" miny="342865.219" maxx="7541600.5" maxy="858321.062"/>
+              <BoundingBox CRS="EPSG:2400" minx="6204749.319063381" miny="1292558.6581074665" maxx="7546264.309965889" maxy="1824716.0668562762"/>
+              <BoundingBox CRS="EPSG:3007" minx="6206512.003275933" miny="118479.86628233419" maxx="7565093.072922671" maxy="695689.2904798072"/>
+              <BoundingBox CRS="EPSG:3008" minx="6206875.750166633" miny="55617.86541944402" maxx="7554089.766111832" maxy="602135.4657495902"/>
+              <BoundingBox CRS="EPSG:3009" minx="6209271.708683473" miny="-7197.660064025607" maxx="7544618.347338935" maxy="508464.4477791117"/>
+              <BoundingBox CRS="EPSG:3010" minx="6202508.067833916" miny="-100775.58772635867" maxx="7549196.7117324" maxy="445519.5480246171"/>
+              <BoundingBox CRS="EPSG:3011" minx="6197784.354766032" miny="-194288.8876539379" maxx="7555299.770877065" maxy="382429.1653689522"/>
+              <BoundingBox CRS="EPSG:3012" minx="6207819.641155365" miny="24202.35616882726" maxx="7549162.498479436" maxy="555313.0283662709"/>
+              <BoundingBox CRS="EPSG:3013" minx="6205634.669117641" miny="-53993.178204753145" maxx="7546716.907443396" maxy="477012.1464318932"/>
+              <BoundingBox CRS="EPSG:3014" minx="6199891.429275128" miny="-147541.84571990895" maxx="7552057.692555716" maxy="413990.5799160433"/>
+              <BoundingBox CRS="EPSG:3015" minx="6196186.522607618" miny="-241013.62332675728" maxx="7558922.855830402" maxy="350839.2171065085"/>
+              <BoundingBox CRS="EPSG:3016" minx="6194517.685612503" miny="-334383.6623978143" maxx="7567311.620053781" maxy="287589.3250372693"/>
+              <BoundingBox CRS="EPSG:3017" minx="6194883.896336007" miny="-427626.5736600794" maxx="7577223.001858908" maxy="224272.04181787503"/>
+              <BoundingBox CRS="EPSG:3018" minx="6197285.379162979" miny="-520716.2967884538" maxx="7588655.791684019" maxy="160918.4168810242"/>
+              <BoundingBox CRS="EPSG:3021" minx="6204749.319063381" miny="1292558.6581074665" maxx="7546264.309965889" maxy="1824716.0668562762"/>
+              <BoundingBox CRS="EPSG:4326" minx="55.87291675047962" miny="11.248058589698488" maxx="67.98829050879046" maxy="23.508478040711797"/>
+              <BoundingBox CRS="EPSG:4258" minx="55.87291671773845" miny="11.248058589698488" maxx="67.9882904953424" maxy="23.508478040711793"/>
+              <BoundingBox CRS="EPSG:900913" minx="1252128.1546181424" miny="7533158.459398696" maxx="2616951.8048168905" maxy="1.0443518558480432E7"/>
+            </Layer>
+            <Layer queryable="1">
+              <Name>MRR:SE.GOV.SGU.MRR.BEARBETNINGSKONCESSIONER_APPLIED_VY</Name>
+              <Title>Ansökta bearbetningskoncessioner</Title>
+              <Abstract>
+                Bearbetningskoncessioner, ansökta
+                mrr_appl_ec_vy
+              </Abstract>
+              <KeywordList/>
+              <CRS>EPSG:3006</CRS>
+              <CRS>CRS:84</CRS>
+              <EX_GeographicBoundingBox>
+                <westBoundLongitude>14.339</westBoundLongitude>
+                <eastBoundLongitude>20.876</eastBoundLongitude>
+                <southBoundLatitude>57.656</southBoundLatitude>
+                <northBoundLatitude>67.96</northBoundLatitude>
+              </EX_GeographicBoundingBox>
+              <BoundingBox CRS="CRS:84" minx="14.339" miny="57.656" maxx="20.876" maxy="67.96"/>
+              <BoundingBox CRS="EPSG:3006" minx="6397954.0" miny="472300.0" maxx="7538510.0" maxy="746851.375"/>
+              <BoundingBox CRS="EPSG:2400" minx="6397229.98975606" miny="1424309.6408587776" maxx="7541482.8114867" maxy="1713196.743085601"/>
+              <BoundingBox CRS="EPSG:3007" minx="6403244.703376603" miny="247952.16241212754" maxx="7556572.952158744" maxy="575665.3354251101"/>
+              <BoundingBox CRS="EPSG:3008" minx="6400890.0697545055" miny="185129.1871407251" maxx="7548285.434296915" maxy="486357.5339997753"/>
+              <BoundingBox CRS="EPSG:3009" minx="6400514.205682272" miny="122288.91556622647" maxx="7541526.610644258" maxy="396950.15506202483"/>
+              <BoundingBox CRS="EPSG:3010" minx="6396038.438306902" miny="32915.15636694353" maxx="7542961.528445424" maxy="334009.61888357066"/>
+              <BoundingBox CRS="EPSG:3011" minx="6393544.907875405" miny="-56424.10820811844" maxx="7545921.223366096" maxy="270978.58122807194"/>
+              <BoundingBox CRS="EPSG:3012" minx="6400454.825783056" miny="153709.27960314197" maxx="7544714.885352567" maxy="441664.60512800014"/>
+              <BoundingBox CRS="EPSG:3013" minx="6398028.427365648" miny="77599.37266059892" maxx="7542053.459073259" maxy="365493.14657191525"/>
+              <BoundingBox CRS="EPSG:3014" minx="6394543.9932989385" miny="-11760.438653439516" maxx="7544250.794672091" maxy="302503.4675914822"/>
+              <BoundingBox CRS="EPSG:3015" minx="6393041.0585432155" miny="-101072.53493516601" maxx="7547972.769648695" maxy="239438.84224806784"/>
+              <BoundingBox CRS="EPSG:3016" minx="6393518.880086588" miny="-190310.3027767528" maxx="7553218.9814495" maxy="176330.31336546032"/>
+              <BoundingBox CRS="EPSG:3017" minx="6395977.694286322" miny="-279446.8015930957" maxx="7559988.8502871925" maxy="113208.86660754016"/>
+              <BoundingBox CRS="EPSG:3018" minx="6400418.715423257" miny="-368454.64710350934" maxx="7568281.606588057" maxy="50105.47078731195"/>
+              <BoundingBox CRS="EPSG:3021" minx="6397229.98975606" miny="1424309.6408587776" maxx="7541482.8114867" maxy="1713196.743085601"/>
+              <BoundingBox CRS="EPSG:4326" minx="57.65604441971027" miny="14.338538797823086" maxx="67.96037979883589" maxy="20.87570109126265"/>
+              <BoundingBox CRS="EPSG:4258" minx="57.6560443895634" miny="14.338538797823086" maxx="67.96037978534586" maxy="20.87570109126265"/>
+              <BoundingBox CRS="EPSG:900913" minx="1596158.837693263" miny="7895407.647516052" maxx="2323872.4154319433" maxy="1.0435233691293139E7"/>
+            </Layer>
+            <!--<Layer queryable="1">
+              <Name>MRR:SE.GOV.SGU.MRR.BEARBETNINGSKONCESSIONER_ALL_VY</Name>
+              <Title>Bearbetningskoncessioner</Title>
+              <Abstract>mrr_bk_vy</Abstract>
+              <KeywordList>
+                <Keyword>mrr_bk_vy</Keyword>
+                <Keyword>features</Keyword>
+              </KeywordList>
+              <CRS>EPSG:3006</CRS>
+              <CRS>CRS:84</CRS>
+              <EX_GeographicBoundingBox>
+                <westBoundLongitude>11.248058583745037</westBoundLongitude>
+                <eastBoundLongitude>23.508478052422948</eastBoundLongitude>
+                <southBoundLatitude>55.872916716491574</southBoundLatitude>
+                <northBoundLatitude>67.98829049468769</northBoundLatitude>
+              </EX_GeographicBoundingBox>
+              <BoundingBox CRS="CRS:84" minx="11.248058583745037" miny="55.872916716491574" maxx="23.508478052422948" maxy="67.98829049468769"/>
+              <BoundingBox CRS="EPSG:3006" minx="6206788.0" miny="342865.21875" maxx="7541600.5" maxy="858321.0625"/>
+              <BoundingBox CRS="EPSG:2400" minx="6204749.319057541" miny="1292558.6578573259" maxx="7546264.309969152" maxy="1824716.0673562945"/>
+              <BoundingBox CRS="EPSG:3007" minx="6206512.003265083" miny="118479.8660326012" maxx="7565093.072947045" maxy="695689.2909805692"/>
+              <BoundingBox CRS="EPSG:3008" minx="6206875.750161205" miny="55617.86516946601" maxx="7554089.766124007" maxy="602135.4662501373"/>
+              <BoundingBox CRS="EPSG:3009" minx="6209271.708683473" miny="-7197.660314125649" maxx="7544618.347338935" maxy="508464.44827931165"/>
+              <BoundingBox CRS="EPSG:3010" minx="6202508.067823056" miny="-100775.58797651669" maxx="7549196.711738476" maxy="445519.5485244178"/>
+              <BoundingBox CRS="EPSG:3011" minx="6197784.354744344" miny="-194288.88790408912" maxx="7555299.770889222" maxy="382429.1658681076"/>
+              <BoundingBox CRS="EPSG:3012" minx="6207819.64115265" miny="24202.355918772882" maxx="7549162.498485521" maxy="555313.028866661"/>
+              <BoundingBox CRS="EPSG:3013" minx="6205634.669112206" miny="-53993.17845489021" maxx="7546716.907446432" maxy="477012.1469319244"/>
+              <BoundingBox CRS="EPSG:3014" minx="6199891.429258851" miny="-147541.84597007168" maxx="7552057.692564833" maxy="413990.58041555196"/>
+              <BoundingBox CRS="EPSG:3015" minx="6196186.522580526" miny="-241013.62357688032" maxx="7558922.855845599" maxy="350839.2176052494"/>
+              <BoundingBox CRS="EPSG:3016" minx="6194517.6855746135" miny="-334383.66264783137" maxx="7567311.620075066" maxy="287589.3255349982"/>
+              <BoundingBox CRS="EPSG:3017" minx="6194883.896287333" miny="-427626.5739099225" maxx="7577223.001886282" maxy="224272.04231434895"/>
+              <BoundingBox CRS="EPSG:3018" minx="6197285.3791035265" miny="-520716.2970380528" maxx="7588655.791717485" maxy="160918.41737600073"/>
+              <BoundingBox CRS="EPSG:3021" minx="6204749.319057541" miny="1292558.6578573259" maxx="7546264.309969152" maxy="1824716.0673562945"/>
+              <BoundingBox CRS="EPSG:4326" minx="55.87291675010831" miny="11.248058583745035" maxx="67.98829050879046" maxy="23.508478052422948"/>
+              <BoundingBox CRS="EPSG:4258" minx="55.87291671736714" miny="11.248058583745037" maxx="67.9882904953424" maxy="23.508478052422944"/>
+              <BoundingBox CRS="EPSG:900913" minx="1252128.1539554072" miny="7533158.45932502" maxx="2616951.80612057" maxy="1.0443518558480432E7"/>
+            </Layer>-->
+            <Layer queryable="1">
+              <Name>MRR:SE.GOV.SGU.MRR.MINERAL_APPROVED_VY</Name>
+              <Title>Beviljade undersökningstillstånd, metaller och industrimineral</Title>
+              <Abstract>mrr_appr_12_vy</Abstract>
+              <KeywordList/>
+              <CRS>EPSG:3006</CRS>
+              <CRS>CRS:84</CRS>
+              <EX_GeographicBoundingBox>
+                <westBoundLongitude>10.663</westBoundLongitude>
+                <eastBoundLongitude>24.341</eastBoundLongitude>
+                <southBoundLatitude>56.967</southBoundLatitude>
+                <northBoundLatitude>68.433</northBoundLatitude>
+              </EX_GeographicBoundingBox>
+              <BoundingBox CRS="CRS:84" minx="10.663" miny="56.967" maxx="24.341" maxy="68.433"/>
+              <BoundingBox CRS="EPSG:3006" minx="6331719.5" miny="321774.125" maxx="7591159.5" maxy="886388.625"/>
+              <BoundingBox CRS="EPSG:2400" minx="6329340.004063824" miny="1272924.3913788574" maxx="7596122.5012388015" maxy="1853432.9242034855"/>
+              <BoundingBox CRS="EPSG:3007" minx="6330410.414462268" miny="95003.3747804129" maxx="7616048.709759674" maxy="718308.9591253044"/>
+              <BoundingBox CRS="EPSG:3008" minx="6331332.233135912" miny="33323.937780785374" maxx="7604368.769503746" maxy="627493.9620494493"/>
+              <BoundingBox CRS="EPSG:3009" minx="6334253.201280512" miny="-28297.193877551006" maxx="7594197.178871548" maxy="536543.2422969188"/>
+              <BoundingBox CRS="EPSG:3010" minx="6326753.904562163" miny="-119146.4228581987" maxx="7599289.196829165" maxy="474781.3193402285"/>
+              <BoundingBox CRS="EPSG:3011" minx="6321262.872858693" miny="-209919.59057712206" maxx="7605881.6149414545" maxy="412857.11195861717"/>
+              <BoundingBox CRS="EPSG:3012" minx="6332542.751453214" miny="2504.153733836807" maxx="7599094.337070737" maxy="582033.8838046398"/>
+              <BoundingBox CRS="EPSG:3013" minx="6330252.294410309" miny="-73729.69150219875" maxx="7596555.5912083015" maxy="505684.52321567875"/>
+              <BoundingBox CRS="EPSG:3014" minx="6323757.564380692" miny="-164544.1445031886" maxx="7602397.905857336" maxy="443837.5429531359"/>
+              <BoundingBox CRS="EPSG:3015" minx="6319269.495192602" miny="-255269.46901068796" maxx="7609740.206767718" maxy="381843.9331377524"/>
+              <BoundingBox CRS="EPSG:3016" minx="6316785.675939795" miny="-345879.2008605629" maxx="7618581.496489222" maxy="319734.91036020155"/>
+              <BoundingBox CRS="EPSG:3017" minx="6316304.767648873" miny="-436346.33501739264" maxx="7628920.5366859995" maxy="257541.54992691881"/>
+              <BoundingBox CRS="EPSG:3018" minx="6317826.51068498" miny="-526643.2038222515" maxx="7640755.82763913" maxy="195294.82317542483"/>
+              <BoundingBox CRS="EPSG:3021" minx="6329340.004063824" miny="1272924.3913788574" maxx="7596122.5012388015" maxy="1853432.9242034855"/>
+              <BoundingBox CRS="EPSG:4326" minx="56.96698330373502" miny="10.66310697467072" maxx="68.43298730490251" maxy="24.34111637998974"/>
+              <BoundingBox CRS="EPSG:4258" minx="56.9669832725585" miny="10.663106974670722" maxx="68.43298729211676" maxy="24.341116379989735"/>
+              <BoundingBox CRS="EPSG:900913" minx="1187011.6386945485" miny="7753373.33871226" maxx="2709640.680760268" maxy="1.0576885235666065E7"/>
+            </Layer>
+            <Layer queryable="1">
+              <Name>MRR:SE.GOV.SGU.MRR.MINERAL_APPLIED_VY</Name>
+              <Title>Ansökta undersökningstillstånd, metaller och industrimineral</Title>
+              <Abstract>mrr_appl_12_vy</Abstract>
+              <KeywordList/>
+              <CRS>EPSG:3006</CRS>
+              <CRS>CRS:84</CRS>
+              <EX_GeographicBoundingBox>
+                <westBoundLongitude>10.985</westBoundLongitude>
+                <eastBoundLongitude>24.285</eastBoundLongitude>
+                <southBoundLatitude>57.23</southBoundLatitude>
+                <northBoundLatitude>68.293</northBoundLatitude>
+              </EX_GeographicBoundingBox>
+              <BoundingBox CRS="CRS:84" minx="10.985" miny="57.23" maxx="24.285" maxy="68.293"/>
+              <BoundingBox CRS="EPSG:3006" minx="6361204.0" miny="334015.0" maxx="7575625.5" maxy="886388.625"/>
+              <BoundingBox CRS="EPSG:2400" minx="6358821.64752491" miny="1285521.6646970394" maxx="7580420.865464454" maxy="1853229.412933756"/>
+              <BoundingBox CRS="EPSG:3007" minx="6360406.332662979" miny="107986.343857506" maxx="7600506.0533277225" maxy="717002.5518573853"/>
+              <BoundingBox CRS="EPSG:3008" minx="6361082.654713591" miny="45941.57955881342" maxx="7588823.392118253" maxy="626842.0461733398"/>
+              <BoundingBox CRS="EPSG:3009" minx="6363749.499799919" miny="-16051.420568227302" maxx="7578656.962785114" maxy="536543.2422969188"/>
+              <BoundingBox CRS="EPSG:3010" minx="6356220.689017918" miny="-106247.38444802456" maxx="7583450.564434908" maxy="474402.9011914956"/>
+              <BoundingBox CRS="EPSG:3011" minx="6350691.813792247" miny="-196369.47326685052" maxx="7589752.094460874" maxy="412101.20889397"/>
+              <BoundingBox CRS="EPSG:3012" minx="6362167.200240764" miny="14936.677035690023" maxx="7583550.559770685" maxy="581708.226820436"/>
+              <BoundingBox CRS="EPSG:3013" minx="6359734.883373667" miny="-61156.99381278103" maxx="7580865.230751114" maxy="505495.20076328533"/>
+              <BoundingBox CRS="EPSG:3014" minx="6353206.462577395" miny="-151319.31160387438" maxx="7586412.883406624" maxy="443270.2626933832"/>
+              <BoundingBox CRS="EPSG:3015" minx="6348676.416132608" miny="-241394.54255325015" maxx="7593468.091159347" maxy="380899.652121178"/>
+              <BoundingBox CRS="EPSG:3016" minx="6346142.389469471" miny="-331355.9497330092" maxx="7602029.946579033" maxy="318414.62948671787"/>
+              <BoundingBox CRS="EPSG:3017" minx="6345603.060589141" miny="-421176.27889723005" maxx="7612097.313528308" maxy="255846.3120705209"/>
+              <BoundingBox CRS="EPSG:3018" minx="6347058.147671605" miny="-510827.6389268512" maxx="7623668.807122505" maxy="193225.71221316274"/>
+              <BoundingBox CRS="EPSG:3021" minx="6358821.64752491" miny="1285521.6646970394" maxx="7580420.865464454" maxy="1853229.412933756"/>
+              <BoundingBox CRS="EPSG:4326" minx="57.23020993977664" miny="10.984606121895188" maxx="68.29326092773574" maxy="24.285076509935543"/>
+              <BoundingBox CRS="EPSG:4258" minx="57.23020990898971" miny="10.984606121895188" maxx="68.29326091474321" maxy="24.285076509935543"/>
+              <BoundingBox CRS="EPSG:900913" minx="1222800.760054048" miny="7807317.876452584" maxx="2703402.3509617136" maxy="1.0534700921635771E7"/>
+            </Layer>
+            <Layer queryable="1">
+              <Name>MRR:SE.GOV.SGU.MRR.OLJA_GAS_DIAMANT_APPROVED_VY</Name>
+              <Title>Beviljade undersökningstillstånd, diamanter, olja och gas</Title>
+              <Abstract>
+                Undersökningstillstånd, olja,gas och diamnat, beviljade
+                mrr_appr_3_vy
+              </Abstract>
+              <KeywordList/>
+              <CRS>EPSG:3006</CRS>
+              <CRS>CRS:84</CRS>
+              <EX_GeographicBoundingBox>
+                <westBoundLongitude>10.843</westBoundLongitude>
+                <eastBoundLongitude>23.988</eastBoundLongitude>
+                <southBoundLatitude>55.327</southBoundLatitude>
+                <northBoundLatitude>67.596</northBoundLatitude>
+              </EX_GeographicBoundingBox>
+              <BoundingBox CRS="CRS:84" minx="10.843" miny="55.327" maxx="23.988" maxy="67.596"/>
+              <BoundingBox CRS="EPSG:3006" minx="6148031.0" miny="322899.188" maxx="7497879.5" maxy="885199.375"/>
+              <BoundingBox CRS="EPSG:2400" minx="6145684.771385833" miny="1271896.9088041675" maxx="7502783.023045623" maxy="1851024.588565251"/>
+              <BoundingBox CRS="EPSG:3007" minx="6146942.590372064" miny="100654.38199824671" maxx="7522656.1414369615" maxy="725168.8236708997"/>
+              <BoundingBox CRS="EPSG:3008" minx="6147693.246608742" miny="36713.833387116654" maxx="7510990.4583188025" maxy="630320.6373036315"/>
+              <BoundingBox CRS="EPSG:3009" minx="6150491.196478591" miny="-27171.68067226885" maxx="7500879.851940776" maxy="535353.5164065626"/>
+              <BoundingBox CRS="EPSG:3010" minx="6143203.586947733" miny="-122028.26314622845" maxx="7505942.162191412" maxy="471325.8207994936"/>
+              <BoundingBox CRS="EPSG:3011" minx="6137972.171240056" miny="-216817.9105390979" maxx="7512551.155935692" maxy="407142.05105362076"/>
+              <BoundingBox CRS="EPSG:3012" minx="6148836.228492408" miny="4762.252029857977" maxx="7505740.705969834" maxy="582850.40595845"/>
+              <BoundingBox CRS="EPSG:3013" minx="6146590.104899359" miny="-74606.85991188564" maxx="7503217.63985925" maxy="503361.15144347306"/>
+              <BoundingBox CRS="EPSG:3014" minx="6140331.096923827" miny="-169432.9385618976" maxx="7509053.357856906" maxy="439251.47177787364"/>
+              <BoundingBox CRS="EPSG:3015" minx="6136126.428382753" miny="-264180.17548181966" maxx="7516435.475160584" maxy="375001.4931983785"/>
+              <BoundingBox CRS="EPSG:3016" minx="6133973.377864849" miny="-358824.40491550084" maxx="7525363.296965884" maxy="310642.6517442345"/>
+              <BoundingBox CRS="EPSG:3017" minx="6133870.5482521625" miny="-453340.87951341376" maxx="7535835.944328684" maxy="246206.23205081368"/>
+              <BoundingBox CRS="EPSG:3018" minx="6135817.872757679" miny="-547704.1357062384" maxx="7547852.332281539" maxy="181723.41019978892"/>
+              <BoundingBox CRS="EPSG:3021" minx="6145684.771385833" miny="1271896.9088041675" maxx="7502783.023045623" maxy="1851024.588565251"/>
+              <BoundingBox CRS="EPSG:4326" minx="55.32726098124807" miny="10.842808626661139" maxx="67.59632504044559" maxy="23.98777481755521"/>
+              <BoundingBox CRS="EPSG:4258" minx="55.327260947762824" miny="10.842808626661137" maxx="67.59632502640403" maxy="23.98777481755521"/>
+              <BoundingBox CRS="EPSG:900913" minx="1207015.9350888317" miny="7425641.616063126" maxx="2670306.877953957" maxy="1.0328072703443304E7"/>
+            </Layer>
+            <Layer queryable="1">
+              <Name>MRR:SE.GOV.SGU.MRR.OLJA_GAS_DIAMANT_APPLIED_VY</Name>
+              <Title>Ansökta undersökningstillstånd, diamanter, olja och gas</Title>
+              <Abstract>
+                Undersökningstillstånd, olja,gas och diamant, ansökta
+                mrr_appl_3_vy
+              </Abstract>
+              <KeywordList/>
+              <CRS>EPSG:3006</CRS>
+              <CRS>CRS:84</CRS>
+              <EX_GeographicBoundingBox>
+                <westBoundLongitude>14.429</westBoundLongitude>
+                <eastBoundLongitude>21.707</eastBoundLongitude>
+                <southBoundLatitude>60.861</southBoundLatitude>
+                <northBoundLatitude>65.636</northBoundLatitude>
+              </EX_GeographicBoundingBox>
+              <BoundingBox CRS="CRS:84" minx="14.429" miny="60.861" maxx="21.707" maxy="65.636"/>
+              <BoundingBox CRS="EPSG:3006" minx="6760822.0" miny="473724.281" maxx="7279452.0" maxy="810021.312"/>
+              <BoundingBox CRS="EPSG:2400" minx="6759349.2943115635" miny="1430129.2253695019" maxx="7282313.046161311" maxy="1773019.2980878945"/>
+              <BoundingBox CRS="EPSG:3007" minx="6766042.288695696" miny="261844.5176724862" maxx="7300474.159609028" maxy="622483.6487265383"/>
+              <BoundingBox CRS="EPSG:3008" minx="6763855.198988693" miny="192788.81457567326" maxx="7290591.961097871" maxy="541385.9513288039"/>
+              <BoundingBox CRS="EPSG:3009" minx="6763527.410964386" miny="123713.76650660264" maxx="7282364.945978391" maxy="460145.3701480592"/>
+              <BoundingBox CRS="EPSG:3010" minx="6757357.892247957" miny="42516.52191547527" maxx="7283815.525543128" maxy="390925.4082702617"/>
+              <BoundingBox CRS="EPSG:3011" minx="6753054.535105992" miny="-38641.702990056074" maxx="7286913.498132405" maxy="321596.686804774"/>
+              <BoundingBox CRS="EPSG:3012" minx="6763458.910476651" miny="158251.75675593037" maxx="7286271.561148454" maxy="500781.6230718828"/>
+              <BoundingBox CRS="EPSG:3013" minx="6760209.283084585" miny="83112.11139102776" maxx="7282884.313545998" maxy="425550.95768727275"/>
+              <BoundingBox CRS="EPSG:3014" minx="6754973.033578422" miny="1930.6854743354488" maxx="7285158.585462647" maxy="356272.67178988166"/>
+              <BoundingBox CRS="EPSG:3015" minx="6751602.257904997" miny="-79196.9381399928" maxx="7289080.269487254" maxy="286901.381383163"/>
+              <BoundingBox CRS="EPSG:3016" minx="6750095.978966641" miny="-160241.05810968956" maxx="7294649.415668975" maxy="217468.47956525168"/>
+              <BoundingBox CRS="EPSG:3017" minx="6750453.758054112" miny="-241171.7158754316" maxx="7301866.080554154" maxy="148005.24779647196"/>
+              <BoundingBox CRS="EPSG:3018" minx="6752675.699488136" miny="-321958.6050884282" maxx="7310730.31204689" maxy="78542.91243424761"/>
+              <BoundingBox CRS="EPSG:3021" minx="6759349.2943115635" miny="1430129.2253695019" maxx="7282313.046161311" maxy="1773019.2980878945"/>
+              <BoundingBox CRS="EPSG:4326" minx="60.861022191371504" miny="14.429187358720329" maxx="65.63594821312607" maxy="21.706927959202698"/>
+              <BoundingBox CRS="EPSG:4258" minx="60.86102216633626" miny="14.429187358720332" maxx="65.6359481959998" maxy="21.706927959202698"/>
+              <BoundingBox CRS="EPSG:900913" minx="1606249.7893334872" miny="8593981.417681668" maxx="2416404.1671047173" maxy="9777912.41007181"/>
+            </Layer>
+            <Layer queryable="1">
+              <Name>MRR:SE.GOV.SGU.MRR.UNDERSOKNINGSTILLSTAND_ALL_VY</Name>
+              <Title>Alla ansökta och beviljade undersökningstillstånd(oavsett typ)</Title>
+              <Abstract>Undersökningstillstånd</Abstract>
+              <KeywordList>
+                <Keyword>features</Keyword>
+                <Keyword>mrr_ut_vy</Keyword>
+              </KeywordList>
+              <CRS>EPSG:3006</CRS>
+              <CRS>CRS:84</CRS>
+              <EX_GeographicBoundingBox>
+                <westBoundLongitude>10.66310697467072</westBoundLongitude>
+                <eastBoundLongitude>24.34111637998974</eastBoundLongitude>
+                <southBoundLatitude>55.32632937402351</southBoundLatitude>
+                <northBoundLatitude>68.43298729147266</northBoundLatitude>
+              </EX_GeographicBoundingBox>
+              <BoundingBox CRS="CRS:84" minx="10.66310697467072" miny="55.32632937402351" maxx="24.34111637998974" maxy="68.43298729147266"/>
+              <BoundingBox CRS="EPSG:3006" minx="6148031.0" miny="321774.125" maxx="7591159.5" maxy="886388.625"/>
+              <BoundingBox CRS="EPSG:2400" minx="6145670.96411135" miny="1270771.1792232133" maxx="7596122.5012388015" maxy="1853432.9242034855"/>
+              <BoundingBox CRS="EPSG:3007" minx="6146894.0765314475" miny="95003.3747804129" maxx="7616048.709759674" maxy="726360.091959304"/>
+              <BoundingBox CRS="EPSG:3008" minx="6147668.977350902" miny="33323.937780785374" maxx="7604368.769503746" maxy="631511.2841962227"/>
+              <BoundingBox CRS="EPSG:3009" minx="6150491.196478591" miny="-28297.193877551006" maxx="7594197.178871548" maxy="536543.2422969188"/>
+              <BoundingBox CRS="EPSG:3010" minx="6143177.920796741" miny="-123154.10333001736" maxx="7599289.196829165" maxy="474781.3193402285"/>
+              <BoundingBox CRS="EPSG:3011" minx="6137920.914897282" miny="-217943.7986489184" maxx="7605881.6149414545" maxy="412857.11195861717"/>
+              <BoundingBox CRS="EPSG:3012" minx="6148824.089805108" miny="2504.153733836807" maxx="7599094.337070737" maxy="584040.6293691052"/>
+              <BoundingBox CRS="EPSG:3013" minx="6146577.261284449" miny="-75732.57125642014" maxx="7596555.5912083015" maxy="505684.52321567875"/>
+              <BoundingBox CRS="EPSG:3014" minx="6140292.627225118" miny="-170558.83784661948" maxx="7602397.905857336" maxy="443837.5429531359"/>
+              <BoundingBox CRS="EPSG:3015" minx="6136062.400212471" miny="-265305.98150392494" maxx="7609740.206767718" maxy="381843.9331377524"/>
+              <BoundingBox CRS="EPSG:3016" minx="6133883.842142572" miny="-359949.8309765672" maxx="7618581.496489222" maxy="319734.91036020155"/>
+              <BoundingBox CRS="EPSG:3017" minx="6133755.539239039" miny="-454465.631817117" maxx="7628920.5366859995" maxy="257541.54992691881"/>
+              <BoundingBox CRS="EPSG:3018" minx="6135677.408162173" miny="-548827.9117434224" maxx="7640755.82763913" maxy="195294.82317542483"/>
+              <BoundingBox CRS="EPSG:3021" minx="6145670.96411135" miny="1270771.1792232133" maxx="7596122.5012388015" maxy="1853432.9242034855"/>
+              <BoundingBox CRS="EPSG:4326" minx="55.326329408392084" miny="10.66310697467072" maxx="68.43298730490251" maxy="24.34111637998974"/>
+              <BoundingBox CRS="EPSG:4258" minx="55.326329374905605" miny="10.663106974670722" maxx="68.43298729211676" maxy="24.341116379989735"/>
+              <BoundingBox CRS="EPSG:900913" minx="1187011.6386945485" miny="7425459.328961357" maxx="2709640.680760268" maxy="1.0576885235666065E7"/>
+            </Layer>
+        </Layer>
+    </Capability>
+</WMT_MS_Capabilities>

@@ -1,0 +1,493 @@
+﻿/// <reference path="../jQuery/1.3.1/jquery-1.3-vsdoc.js" />
+
+// Loads a string into an XMLdoc-object.
+function getXmlDoc(sXmlText) {
+    var xmlDoc;
+    try {
+        //Firefox, Mozilla, Opera, etc. 
+        var parser = new DOMParser();
+        xmlDoc = parser.parseFromString(sXmlText, "text/xml");
+    }
+    catch (e) {
+        try {
+            //Internet Explorer 
+            xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+            xmlDoc.async = "false";
+            xmlDoc.loadXML(sXmlText);
+        }
+        catch (e) { alert(e.message) }
+    }
+    return xmlDoc;
+}
+function funcAbout() {
+    alert("Something about the map in a beautiful window!");
+}
+var firstID;
+Bergis.Search.pageSelect = function (pageNo, noOfPages) {
+    if ((pageNo - 1) != noOfPages) {
+        jQuery('#hdnCurrentPageNo').val(pageNo);
+        Bergis.Search.sAjax();
+    }
+}
+function searchTest(searchText) {
+    if ((searchText != "") && (searchText != null)) {
+        $("#btnClear").click();
+        $("#txtFreeSearch").val(searchText);
+        $("#btnSearch").click();
+    }
+    else{
+        alert("Finns ingen sökning att genomföra. Var god försök igen.");
+    }
+}
+Bergis.Search.sAjax = function () {
+    jQuery("#loadingBar").removeClass("hide");
+    jQuery("#objectList").empty();
+    firstID = null;
+    var _sWord = jQuery('#hdnSearchTxt').val();
+    var _pageNo = jQuery('#hdnCurrentPageNo').val();
+
+    var _filter = "";
+    var countyArr = getFilterValues("county");
+    var municipalityArr = getFilterValues("municipality");
+    var shireArr = getFilterValues("shire");
+    var searchColumn = "";
+    var _includeNoData = jQuery("#showNotDefined").attr("checked");
+    var paramObj = { sWord: _sWord, filter: _filter, pageNo: _pageNo, sColumn: searchColumn, includeNoData: _includeNoData };
+
+
+
+    if (shireArr.length > 0) {
+        //lägg in shire först!!!
+        paramObj.sColumn = "Shire";
+        paramObj.filter = shireArr.join(";");
+    }
+    else if (municipalityArr.length > 0) {
+        paramObj.sColumn = "Municipality";
+        paramObj.filter = municipalityArr.join(";");
+    }
+    else if (countyArr.length > 0) {
+        paramObj.sColumn = "County";
+        paramObj.filter = countyArr.join(";");
+    }
+    if (_sWord.length > 0) {
+        paramObj.sWord = _sWord;
+    }
+    jQuery.get("services/post.aspx", paramObj, Bergis.Search.handleSearchResult, 'text/xml');
+}
+
+Bergis.Search.handleSearchResult = function (sText, sStatus) {
+    if (sStatus == "success") {
+        var xmlObj = getXmlDoc(sText);
+        Bergis.Search.resultView(xmlObj);
+        Bergis.Search.loadRSSinMapForPages(xmlObj);
+        Bergis.Search.addMarker(firstID);
+    } else {
+        alert('Error occured in ajaxrequest!');
+    }
+}
+
+Bergis.Search.loadRSSinMapForPages = function (sXml) {
+    var arrPages = [];
+    jQuery("page", sXml).each(function () {
+        arrPages.push(jQuery(this).attr('pageId'));
+    });
+    var sPages = arrPages.join(';');
+    Bergis.Search.removeGeoRssLayer();
+    Bergis.Search.removeMarkerLayer();
+    var newIcon = new OpenLayers.Icon("images/bergis.gif", new OpenLayers.Size(24, 24));
+    var size = new OpenLayers.Size(200, 50);
+
+    var newRSSLayer = new OpenLayers.Layer.GeoRSS('resultList', 'services/GeoRssDepositsByPages.aspx?pages=' + sPages, { icon: newIcon, popupSize: size, useFeedTitle: false });
+    map.addLayer(newRSSLayer);
+    jQuery.get("services/GeoRssDepositsBoundingBox.aspx", { pages: sPages }, Bergis.Map.returnBbox, 'text/xml');
+}
+Bergis.Search.selectedObject = function (PageId, flag) {
+    jQuery(".accordionContent").empty();
+    Bergis.Search.addMarker(PageId);
+    Bergis.Search.showObject(PageId, flag);
+}
+var accordion = false;
+Bergis.Search.resultView = function (oXmlDoc) {
+    jQuery("#loadingBar").addClass("hide");
+    // alert('restulviewCalled');
+    //To make accordion work in IE, make tabs.hide absolute position i tabs.css.
+    var arrData = Bergis.Search.parseXmlToGetDeposits(oXmlDoc);
+    var headerNumber = 0;
+    jQuery("#resultList").empty();
+    //if accordion is present, destroy it!
+    if (accordion) {
+        jQuery("#resultList").accordion("destroy");
+        accordion = false;
+    }
+
+    if (arrData.length < 1) {
+        jQuery("#noOfHitsDiv").empty();
+        jQuery("#pageingContainer").empty();
+        jQuery("#resultList").html("<div id='noResults'><h3>Sökningen gav inga resultat.<br />Försöka söka mer allmänt eller minska sökkriterierna.</h3></div>");
+        // jQuery('#tab2').show();
+        jQuery('#tab2').addClass("tabs-selected");
+        jQuery('#tab1').removeClass("tabs-selected");
+        jQuery('#tab2').show();
+        jQuery('#container-1').tabs("select", 1);
+        //jQuery('#container-1').triggerTab(2);
+    }
+    else {
+        // Create accordions
+        for (var i = 0; i < arrData.length; i++) {
+            headerNumber++;
+            jQuery("<div>" +
+            "<h3><a id='" + arrData[i].PageId + "' href='#' onClick='Bergis.Search.selectedObject(" + arrData[i].PageId + "," + 1 + ")'>" + headerNumber + ": " + arrData[i].MainTitel + "</a><div class='pageNoAccordion'>Sidnr: " + arrData[i].PageNo + "</div></h3>" +
+                "<div class='accordionContent'>" +
+                "</div>" +
+            "</div>").appendTo("#resultList");
+            //            jQuery("<div>" +
+            //            "<h3><a href='#' onClick='Bergis.Application.selectedObject(" + arrData[i].PageId + "," + 1 + ")'>Sidnr: " + arrData[i].PageNo + ", " + arrData[i].MainTitel + "</a></h3>" +
+            //                "<div class='accordionContent'>" +
+            //                "</div>" +
+            //            "</div>").appendTo("#resultList");
+            if (i == 0) {
+                firstID = arrData[i].PageId;
+                Bergis.Search.selectedObject(arrData[i].PageId, 0);
+            }
+        }
+        jQuery("#resultList").accordion({
+            header: "h3",
+            active: false,
+            animated: false,
+            autoheight: false,
+            collapsible: true
+        });
+        accordion = true;
+        //View tab on search
+        //        jQuery('#tab2').show();
+        //--DEBE
+        //jQuery('#container-1').triggerTab(1);
+        //        jQuery('#container-1').tabs("select", 1);
+        jQuery('#tab2').addClass("tabs-selected");
+        jQuery('#tab1').removeClass("tabs-selected");
+        jQuery('#tab2').show();
+        jQuery('#container-1').tabs("select", 1);
+
+
+        //Clear noOfHitsDiv
+        jQuery("#noOfHitsDiv").empty();
+
+        // Get no of hits.
+        var iCount = parseInt(jQuery("count", oXmlDoc).text(), 10);
+        jQuery("#noOfHitsDiv").append("Sökningen gav: " + iCount + " träffar.");
+        // Get pageingSize.
+        var iPageSize = 10;
+
+        // Calculate number of pages.
+        var iPages = Math.ceil(iCount / iPageSize);
+
+        // Get current Page
+        var iCurrentPage = parseInt(jQuery("#hdnCurrentPageNo").val(), 10);
+
+        // Create all pageHtml in pageingContainer.
+        jQuery("#pageingContainer").empty();
+        if (iPages > 1) {
+            var iFirstPage = Math.max((iCurrentPage), 1);
+            var iLastPage = Math.min((iCurrentPage + 4), iPages);
+            //jQuery("<span class=\"first\"><a href='javascript:Bergis.Application.pageSelect(" + 1 + ")';return false;>Första</a></span>").appendTo("#pageingContainer");
+            jQuery("<span class=\"next\"><a href='javascript:Bergis.Search.pageSelect(" + (iCurrentPage - 1) + ")';return false;>Föregående</a></span>").appendTo("#pageingContainer");
+            //            if (iFirstPage > 1) {
+            //                jQuery("<span>...</span>").appendTo("#pageingContainer");
+            //            }
+            for (var i = iFirstPage - 1; i < iLastPage; i++) {
+                var className = ((i + 1) == iCurrentPage) ? 'class="selected"' : '';
+                jQuery("<span " + className + "><a href='javascript:Bergis.Search.pageSelect(" + (i + 1) + ")';return false;>" + (i + 1) + "</a></span>").appendTo("#pageingContainer");
+            }
+            //            if (iLastPage < iPages) {
+            //                jQuery("<span>...</span>").appendTo("#pageingContainer");
+            //            }
+            jQuery("<span class=\"next\"><a href='javascript:Bergis.Search.pageSelect(" + (iCurrentPage + 1) + ", " + iPages + ")';return false;>Nästa</a></span>").appendTo("#pageingContainer");
+            //jQuery("<span class=\"last\"><a href='javascript:Bergis.Application.pageSelect(" + iPages + ")';return false;>Sista</a></span>").appendTo("#pageingContainer");
+        }
+    }
+}
+
+Bergis.Search.parseXmlToGetDeposits = function (xmlObj) {
+    var results = [];
+    jQuery("searchText", xmlObj).each(function () {
+        var obj =
+            {
+                MainTitel: jQuery(this).attr('MainTitel'),
+                Author: jQuery(this).attr('Author'),
+                PageNo: jQuery(this).attr('PageNo'),
+                NoOfPages: jQuery(this).attr('NoOfPages'),
+                County: jQuery(this).attr('County'),
+                Municipality: jQuery(this).attr('Municipality'),
+                PageId: jQuery(this).attr('PageId')
+            };
+
+        results.push(obj);
+    });
+    return results;
+}
+
+
+
+Bergis.Search.addMarker = function (pageId) {
+
+    Bergis.Search.removeMarkerLayer();
+    if (map.popups != null) {
+        if (map.popups.length != 0) {
+            map.popups[0].hide();
+        }
+    }
+
+    //Added if statement to prevent crash when getting zero results in search statement
+    if (pageId != null) {
+        var newIcon = new OpenLayers.Icon("images/bergisA.gif", new OpenLayers.Size(24, 24));
+        var size = new OpenLayers.Size(200, 50);
+        var newRSSLayer = new OpenLayers.Layer.GeoRSS('markedGeoRSS', 'services/GeoXmlDepositsByPages.aspx?pageId=' + pageId, { icon: newIcon, useFeedTitle: false, popupSize: size });
+        map.addLayer(newRSSLayer);
+    }
+}
+
+Bergis.Search.removeMarkerLayer = function () {
+    for (var i = 0; i < map.layers.length; i++) {
+        if (map.layers[i].name == "markedGeoRSS" && map.layers[i].CLASS_NAME == "OpenLayers.Layer.GeoRSS") {
+            map.removeLayer(map.layers[i]);
+        }
+    }
+}
+Bergis.Search.removeGeoRssLayer = function () {
+    for (var i = 0; i < map.layers.length; i++) {
+        if (map.layers[i].CLASS_NAME == "OpenLayers.Layer.GeoRSS") {
+            map.removeLayer(map.layers[i]);
+        }
+    }
+}
+//Called by getBounds upon searchanswer from serverside, also passes the coords into zoomToBounds function if ajax is successful.
+Bergis.Map.returnBbox = function (sText, sStatus) {
+    if (sStatus == "success") {
+        Bergis.Map.zoomToBounds(sText);
+    } else {
+        alert('Error occured in ajaxrequest!');
+    }
+}
+//Zoomfunction that centers the map when user searches a city.
+Bergis.Map.zoomToBounds = function (bounds) {
+    if (map == null) {
+        Hydro.Map.setMap();
+    }
+
+
+    if (bounds.length > 0) {
+        var boundsList = bounds.split('&');
+
+        //If the searchresult returns a 0.0 value this event will show the noResult div, telling the user that the search didn´t
+        //return any hits. It also calls the setCenter() function that resets the maps zoom and focus point.
+        if (boundsList[2] == "0") {
+            map.zoomTo(1);
+        }
+
+            //if the search is successful the noResultdiv stays hidden or becomes hidden. The map is then given a new boundingbox to focus.
+        else if (boundsList[0] > 0) {
+
+            var bounds = new OpenLayers.Bounds(boundsList[0], boundsList[1], boundsList[2], boundsList[3]);
+            map.zoomToExtent(bounds);
+            if (map.getZoom() > 4) {
+                map.zoomTo(4);
+            }
+        }
+    }
+}
+
+Bergis.Search.showObject = function (pageId, flag) {
+    var paramObj = { pageId: pageId };
+    if (flag == 0) {
+        var html = jQuery.ajax({
+            type: "GET",
+            data: paramObj,
+            url: "services/postObject.aspx",
+            dataType: "html",
+            async: false
+        });
+        Bergis.Search.handleObjectResult(html.responseText, "success");
+        //    ("postObject.aspx", paramObj, Bergis.Search.handleObjectResult, 'html');
+    }
+    else {
+        jQuery.get("services/postObject.aspx", paramObj, Bergis.Search.handleObjectResult, 'html');
+    }
+}
+
+Bergis.Search.handleObjectResult = function (sText, sStatus) {
+    if (sStatus == "success") {
+        sText = getXmlDoc(sText);
+        Bergis.Search.objectView(sText);
+    } else {
+        alert('Error occured in ajaxrequest!');
+    }
+}
+
+Bergis.Search.parseXmlToGetObject = function (result) {
+    var results = [];
+    jQuery("Object", result).each(function () {
+        var deps = [];
+        var adm = [];
+        var work = [];
+        var UCminingFields = [];
+        jQuery("Deposit", result).each(function () {
+            adm = [];
+            work = [];
+            jQuery("Administrative", this).each(function () {
+                adm.push(
+                {
+                    County: jQuery(this).find("County").text(),
+                    Municipality: jQuery(this).find("Municipality").text(),
+                    Shire: jQuery(this).find("Shire").text(),
+                    Farm: jQuery(this).find("Farm").text()
+                })
+            });
+            jQuery("WorkPlace", this).each(function () {
+                work.push(
+                {
+                    WorkPlaceName: jQuery(this).find("WorkplaceName").text(),
+                    LocalX: jQuery(this).find("LocalX").text(),
+                    LocalY: jQuery(this).find("LocalY").text(),
+                    LocalZ: jQuery(this).find("LocalZ").text()
+                })
+            });
+            deps.push(
+            {
+                DepositName: jQuery(this).find('DepositName').text(),
+                MiningField: jQuery(this).find('MiningField').text(),
+                Workplaces: jQuery(this).find('Workplaces').text(),
+                BK_North: jQuery(this).find('BK_North').text(),
+                BK_East: jQuery(this).find('BK_East').text(),
+                SGU_North: jQuery(this).find('SGU_North').text(),
+                SGU_East: jQuery(this).find('SGU_East').text(),
+                Sweref_North: jQuery(this).find('Sweref_North').text(),
+                Sweref_East: jQuery(this).find('Sweref_East').text(),
+                AdministrativeUnit: adm,
+                Workplaces: work
+            })
+        });
+        jQuery("UCminingFields", result).each(function () {
+            var miningField =
+            {
+                MiningFieldName: jQuery(this).text()
+            }
+            UCminingFields.push(miningField);
+        });
+        var obj =
+            {
+                MainTitle: jQuery(this).find('MainTitle').text(),
+                PageId: jQuery(this).find('PageId').text(),
+                Chapter: jQuery(this).find('Chapter').text(),
+                Author: jQuery(this).find('Author').text(),
+                Company: jQuery(this).find('Company').text(),
+                Initiator: jQuery(this).find('Initiator').text(),
+                ReportId: jQuery(this).find('ReportId').text(),
+                PublishDate: jQuery(this).find('PublishDate').text(),
+                Deposits: deps,
+                UCminingFields: UCminingFields
+            };
+        results.push(obj);
+    });
+    return results;
+}
+
+Bergis.Search.objectView = function (sXml) {
+    var arrData = Bergis.Search.parseXmlToGetObject(sXml);
+    for (var i = 0; i < arrData.length; i++) {
+        //jQuery(".accordionContent").append("<div>" +
+        //    "<h4>Sidan hittades i: " + arrData[i].MainTitle + "</h4>" +
+        //            "<ul>" +
+        //                "<li><span class='leftColumn'>Underrubrik/Kapitel:</span><span class='rightColumn'" + arrData[i].Chapter + "</span></li>" +
+        //                "<li><span class='leftColumn'>Författare:</span><span class='rightColumn'" + arrData[i].Author + "</span></li>" +
+        //                "<li><span class='leftColumn'>Grundare:</span><span class='rightColumn'" + arrData[i].Initiator + "</span></li>" +
+        //                "<li><span class='leftColumn'>Företag:</span><span class='rightColumn'" + arrData[i].Company + "</span></li>" +
+        //                "<li><span class='leftColumn'>Rapportid:</span><span class='rightColumn'" + arrData[i].ReportId + "</span></li>" +
+        //                "<li><span class='leftColumn'>Publicerad:</span><span class='rightColumn'" + arrData[i].PublishDate + "</span></li>" +
+        //            "</ul>" +
+        //    "</div>");
+        jQuery(".accordionContent").append("<div>" +
+            "<h4>Sidan hittades i: " + arrData[i].MainTitle + "</h4>" +
+                    "<table>" +
+                        "<tr><td class='leftColumn'>Underrubrik/Kapitel:</td><td class='rightColumn'>" + arrData[i].Chapter + "</td></tr>" +
+                        "<tr><td class='leftColumn'>Författare:</td><td class='rightColumn'>" + arrData[i].Author + "</td></tr>" +
+                        "<tr><td class='leftColumn'>Grundare:</td><td class='rightColumn'>" + arrData[i].Initiator + "</td></tr>" +
+                        "<tr><td class='leftColumn'>Företag:</td><td class='rightColumn'>" + arrData[i].Company + "</td></tr>" +
+                        "<tr><td class='leftColumn'>Rapportid:</td><td class='rightColumn'>" + arrData[i].ReportId + "</td></tr>" +
+                        "<tr><td class='leftColumn'>Publicerad:</td><td class='rightColumn'>" + arrData[i].PublishDate + "</td></tr>" +
+                    "</table>" +
+            "</div>");
+        var depositData = arrData[i].Deposits;
+        if (depositData.length > 0) {
+            jQuery(".accordionContent").append("<div class='DepositFields'></div>");
+            for (var j = 0; j < depositData.length; j++) {
+                //jQuery("<h5>Gruva/Utmål/Plats:" + depositData[j].DepositName + "</h5><ul>" +
+                //    "<li>Gruvfält:" + depositData[j].MiningField + "</li>" +
+                //    "<li>Öst-Västlig Koord (Bergskraft):" + depositData[j].BK_East + "</li>" +
+                //    "<li>Nord-sydlig Koord (Bergskraft):" + depositData[j].BK_North + "</li>" +
+                //    "<li>Öst-Västlig Koord (SGU):" + depositData[j].SGU_East + "</li>" +
+                //    "<li>Nord-sydlig Koord (SGU):" + depositData[j].SGU_North + "</li>" +
+                //    "<li>Öst-Västlig Koord (Sweref99):" + depositData[j].Sweref_East + "</li>" +
+                //    "<li>Nord-sydlig Koord (Sweref99):" + depositData[j].Sweref_North + "</li>" +
+                //    "</ul>").appendTo(".DepositFields");
+                jQuery("<h5>Gruva/Utmål/Plats: " + depositData[j].DepositName + "</h5><table>" +
+                    "<tr><td class='leftColumn'>Gruvfält:</td><td class='rightColumn'>" + depositData[j].MiningField + "</td></tr>" +
+                    "<tr><td class='leftColumn'>Öst-Västlig Koord (Bergskraft):</td><td class='rightColumn'>" + depositData[j].BK_East + "</td></tr>" +
+                    "<tr><td class='leftColumn'>Nord-sydlig Koord (Bergskraft):</td><td class='rightColumn'>" + depositData[j].BK_North + "</td></tr>" +
+                    "<tr><td class='leftColumn'>Öst-Västlig Koord (SGU):</td><td class='rightColumn'>" + depositData[j].SGU_East + "</td></tr>" +
+                    "<tr><td class='leftColumn'>Nord-sydlig Koord (SGU):</td><td class='rightColumn'>" + depositData[j].SGU_North + "</td></tr>" +
+                    "<tr><td class='leftColumn'>Öst-Västlig Koord (Sweref99):</td><td class='rightColumn'>" + depositData[j].Sweref_East + "</td></tr>" +
+                    "<tr><td class='leftColumn'>Nord-sydlig Koord (Sweref99):</td><td class='rightColumn'>" + depositData[j].Sweref_North + "</td></tr>" +
+                    "</table>").appendTo(".DepositFields");
+                var adminData = depositData[j].AdministrativeUnit;
+                if (adminData.length > 0) {
+                    jQuery(".DepositFields").append("<div class='adminFields" + j + "'></div>");
+                    for (var k = 0; k < adminData.length; k++) {
+                        //jQuery("<ul>" +
+                        //    "<li>Ort/By/Gård:" + adminData[k].Farm + "</li>" +
+                        //    "<li>Socken/Församling:" + adminData[k].Shire + "</li>" +
+                        //    "<li>Kommun:" + adminData[k].Municipality + "</li>" +
+                        //    "<li>Län:" + adminData[k].County + "</li>" +
+                        //"</ul>").appendTo(".adminFields" + j);
+                        jQuery("<table>" +
+                            "<tr><td class='leftColumn'>Ort/By/Gård:</td><td class='rightColumn'>" + adminData[k].Farm + "</td></tr>" +
+                            "<tr><td class='leftColumn'>Socken/Församling:</td><td class='rightColumn'>" + adminData[k].Shire + "</td></tr>" +
+                            "<tr><td class='leftColumn'>Kommun:</td><td class='rightColumn'>" + adminData[k].Municipality + "</td></tr>" +
+                            "<tr><td class='leftColumn'>Län:</td><td class='rightColumn'>" + adminData[k].County + "</td></tr>" +
+                        "</table>").appendTo(".adminFields" + j);
+                    }
+                }
+                var workData = depositData[j].Workplaces;
+                if (workData.length > 0) {
+                    jQuery(".DepositFields").append("<div class='workFields" + j + "'></div>");
+                    for (var l = 0; l < workData.length; l++) {
+                        jQuery("<ul class=wp" + j + ">").appendTo(".workFields" + j);
+                        if (workData[l].WorkPlaceName.length > 1) {
+                            jQuery("<li>Rum/Ort:" + workData[l].WorkPlaceName + "</li>").appendTo(".wp" + j);
+                        }
+                        if (workData[l].LocalX.length > 1) {
+                            jQuery("<li>Lokal X:" + workData[l].LocalX + "</li>").appendTo(".wp" + j);
+                        }
+                        if (workData[l].LocalY.length > 1) {
+                            jQuery("<li>Lokal Y:" + workData[l].LocalY + "</li>").appendTo(".wp" + j);
+                        }
+                        if (workData[l].LocalZ.length > 1) {
+                            jQuery("<li>Lokal Z:" + workData[l].LocalZ + "</li>").appendTo(".wp" + j);
+                        }
+                        jQuery("</ul>").appendTo(".workFields" + j);
+                    }
+                }
+            }
+        }
+        var UCminingFieldData = arrData[i].UCminingFields;
+        if (UCminingFieldData.length > 0) {
+            jQuery(".accordionContent").append("<div class='UCminingFields'></div>");
+            for (var m = 0; m < UCminingFieldData.length; m++) {
+                jQuery("<li>Gruvfält utan Gruva:" + UCminingFieldData[m].MiningFieldName +
+                            "</li>").appendTo(".UCminingFields");
+            }
+        }
+        //var link = "documentViewer.aspx?pageId=" + arrData[i].PageId;
+        //jQuery(".accordionContent").append("<a href="+ link + "><h5>Visa historiskt dokument, klicka här.</h5></a>");
+        jQuery(".accordionContent").append("<a href='javascript:Bergis.LoginControl.openDocument(" + arrData[i].PageId + ")'><h5>Visa historiskt dokument, klicka här.</h5></a>").css("height", "auto");
+    }
+}

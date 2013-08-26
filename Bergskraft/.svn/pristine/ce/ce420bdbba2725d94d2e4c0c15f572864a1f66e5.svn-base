@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="postObject.aspx.cs" Inherits="postObject" %>

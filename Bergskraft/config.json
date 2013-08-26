@@ -1,0 +1,294 @@
+﻿Bergis.Configuration =
+{
+	"map": {
+    "options": {
+        units: "m",
+        sphericalMercator: true
+    },
+    "bounds": "-20037508.34, -20037508.34,20037508.34, 20037508.34"
+},
+"layers":
+    [
+    {
+		"numzoomlevel":13,
+        "minzoomlevel":5,
+        "maxzoomlevel":20,
+        "visibility":true,
+        "type":"G_STREET_MAP",
+        "title": "Karta",
+				"opacity": 1,
+        "layerId": "-1"
+		},
+		{
+		"numzoomlevel":13,
+        "minzoomlevel":5,
+        "maxzoomlevel":20,
+        "visibility":false,
+        "type":"G_HYBRID_MAP",
+        "title": "Hybrid",
+				"opacity": 0,
+        "layerId": "-2"
+		},
+		{
+		"numzoomlevel":13,
+        "minzoomlevel":5,
+        "maxzoomlevel":20,
+        "visibility":false,
+        "type":"G_PHYSICAL_MAP",
+        "title": "Terräng",
+				"opacity": 0,
+        "layerId": "-3"
+		},
+		{
+		"type": "WMS",
+		"title": "Berggrund, malm och mineral - raster",
+		"url": "http://maps3.sgu.se/geoserver/berg/wms?",
+		"params": {
+			"format": "image/png",
+			"transparent": "true"
+		},
+		"options": {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/cappa/wms_berggrunderraster.xml",
+			"visibility": false,
+			"proxy": "wms/proxyn.aspx",
+			"hoverText": "Rasterskikt - Levereras som WMS av SGU",
+			"tocID": "Berggrundsraster"
+		}
+        },
+		{
+		"type": "WMS",
+		"title": "Geofysik - raster",
+		"url": "http://maps3.sgu.se/geoserver/fysik/wms?",
+		"params": {
+			"format": "image/png",
+			"transparent": "true"
+		},
+		"options": {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/cappa/wms_fysikraster.xml",
+			"visibility": false,
+			"proxy": "wms/proxyn.aspx",
+			"hoverText": "Rasterskikt - Levereras som WMS av SGU",
+			"tocID": "Fysikraster"
+		}
+		}, 
+		{
+		"type": "WMS",
+		"title": "Jordarter - raster",
+		"url": "http://maps3.sgu.se/geoserver/jord/wms?",
+		"params": {
+			"format": "image/png",
+			"transparent": "true"
+		},
+		"options": {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/cappa/wms_jordartraster.xml",
+			"visibility": false,
+			"hoverText": "Rasterskikt - Levereras som WMS av SGU",
+			"proxy": "wms/proxyn.aspx",
+			"tocID": "Jordartsraster"
+		}
+		}, 
+		{
+		"type": "WMS",
+		"title": "Geofysik",
+		"url": "http://maps3.sgu.se/geoserver/fysik/wms?",
+		"params": {
+			"format": "image/png",
+			"transparent": "true"
+		},
+		"options": {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/cappa/wms_fysik.xml",
+			"visibility": false,
+			"proxy": "wms/proxyn.aspx",
+			"hoverText": "Punkt, linjedata och transparenta ytor - Levereras som WMS av SGU",
+			"tocID": "Fysik"
+		}
+		},
+		{
+		"type": "WMS",
+		"title": "Berggrund, malm och mineral",
+		"url": "http://maps3.sgu.se/geoserver/berg/wms?",
+		"params": {
+			"format": "image/png",
+			"transparent": "true"
+		},
+		"options": {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/cappa/wms_berggrunder.xml",
+			"visibility": false,
+			"proxy": "wms/proxyn.aspx",
+			"hoverText": "Punkt, linjedata och transparanta ytor - Levereras som WMS av SGU",
+			"tocID": "Berggrundskartan"
+		}
+        },
+		{
+		"type": "WMS",
+		"title": "Riksintressen 2",
+		"url": "http://81.216.43.111:8080/geoserver/wms?",		
+		"params": {
+			"format": "image/png",
+			"transparent": "true"
+		},
+		"options": {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/xml/wms_riksintressen2.xml",
+			"visibility": false,
+			"proxy": "wms/proxyn.aspx",
+			"hoverText": "Levereras som WMS av Länsstyrelsen",
+			"tocID": "Riksintressen2"
+		}
+		},
+		{
+		"type": "WMS",
+		"title": "Riksintressen 1",
+		"url": "http://81.216.43.111:8080/geoserver/wms?",
+		"params": {
+			"format": "image/png",
+			"transparent": "true"
+		},
+		"options": {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/xml/wms_riksintressen1.xml",
+			"visibility": false,
+			"proxy": "wms/proxyn.aspx",
+			"hoverText": "Levereras som WMS av Länsstyrelsen",
+			"tocID": "Riksintressen1"
+		}
+		},
+		{
+		"type": "WMS",
+		"title": "Skyddade områden",
+		"url": "http://81.216.43.111:8080/geoserver/wms?",
+		"params": {
+			"format": "image/png",
+			"transparent": "true"
+		},
+		"options": {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/xml/wms_skyddadeomraden.xml",
+			"visibility": false,
+			"proxy": "wms/proxyn.aspx",
+			"hoverText": "Levereras som WMS av Länsstyrelsen",
+			"tocID": "Skyddadeomraden"
+		}
+		},
+		{
+		"type": "WMS",
+		"title": "Jordarter",
+		"url": "http://maps3.sgu.se/geoserver/jord/wms?",
+		"params": {
+			"format": "image/png",
+			"transparent": "true"
+		},
+		"options": {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/cappa/wms_jordart.xml",
+			"visibility": false,
+			"hoverText": "Punkt, linjedata och transparenta ytor - Levereras som WMS av SGU",
+			"proxy": "wms/proxyn.aspx",
+			"tocID": "Jordartskartan"
+		}
+		}, 
+		{
+		"type": "WMS",
+		"title": "Grundvatten, brunnar och miljö",
+		"url": "http://maps3.sgu.se/geoserver/grundvatten/wms?",
+		"params": {
+			"format": "image/png",
+			"transparent": "true"
+		},
+		"options": {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/xml/wms_grundvatten.xml",
+			"visibility": false,
+			"proxy": "wms/proxyn.aspx",
+			"hoverText": "Levereras som WMS av SGU",
+			"tocID": "Grundvatten"
+		}
+		}, 
+	    {
+		"type": "WMS",
+		"title": "Ballast och geokemi",
+		"url": "http://maps3.sgu.se/geoserver/mininfo/wms?",
+		"params": 
+		    {
+			"format": "image/png",
+			"transparent": "true",
+			"tiled": "true"
+		    },
+		"options": 
+		    {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/xml/wms_ballast.xml",
+			"visibility": false,
+			"proxy": "wms/proxyn.aspx",
+			"tocID": "Ballast_industrimaterial",
+			"hoverText": "Levereras som WMS av SGU"
+		    }							
+		},
+		{
+		"type": "WMS",
+		"title": "Bergstaten",
+		"url": "http://81.216.43.111:8080/geoserver/wms?",
+		"params": 
+		    {
+			"format": "image/png",
+			"transparent": "true",
+			"tiled": "true"
+		    },
+		"options": 
+		    {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/xml/wms_bergstatTemp.xml",
+			"visibility": false,
+			"hoverText": "Levererat av SGU, aktuellt 121110",
+			"proxy": "wms/proxyn.aspx",
+			"tocID": "Bergstatenlocal"
+		    }							
+		},
+		{
+		"type": "WMS",
+		"title": "Bergstaten",
+		"url": "http://maps3.sgu.se/geoserver/MRR/wms?",
+		"params": 
+		    {
+			"format": "image/png",
+			"transparent": "true",
+			"tiled": "true"
+		    },
+		"options": 
+		    {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/xml/wms_bergstaten.xml",
+			"visibility": false,
+			"hoverText": "Levereras som WMS av SGU",
+			"proxy": "wms/proxyn.aspx",
+			"tocID": "Bergstaten"
+		    }							
+		},
+		{
+		"type": "WMS",
+		"title": "Bergskraft Gruvor",
+		"url": "http://81.216.43.111:8080/geoserver/wms?",
+		"params": 
+		    {
+			"format": "image/png",
+			"transparent": "true",
+			"tiled": "true"
+		    },
+		"options": 
+		    {
+			"buffer": 0,
+			"capabilitiesUrl": "wms/xml/wms_BergskraftGruvor.xml",
+			"visibility": false,
+			"proxy": "wms/proxyn.aspx",
+			"hoverText": "Uppdateras av Bergskraft",
+			"tocID": "BergskraftGruvor"
+		    }							
+		}
+	]
+}
+
